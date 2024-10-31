@@ -3,95 +3,119 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to My GitHub Page</title>
+    <title>Archive Information - Historical Figure</title>
+    <link href="https://fonts.googleapis.com/css2?family=Georgia:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Georgia', serif;
             margin: 0;
             padding: 0;
+            background-color: #1b1b1b;
+            color: #eaeaea;
         }
         header {
-            background-color: #24292e;
+            background-color: #333;
             color: white;
-            padding: 20px;
-            text-align: center;
-        }
-        nav {
-            background-color: #f6f8fa;
-            padding: 10px;
-            text-align: center;
-        }
-        nav a {
-            margin: 0 15px;
-            color: #0366d6;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        nav a:hover {
-            text-decoration: underline;
-        }
-        main {
             padding: 40px;
             text-align: center;
         }
-        footer {
-            background-color: #24292e;
+        nav {
+            background-color: #444;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        nav a {
+            margin: 0 15px;
             color: white;
-            padding: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #f6f8fa;
+        }
+        main {
+            padding: 40px;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 20px;
             text-align: center;
             position: fixed;
             width: 100%;
             bottom: 0;
         }
         .content-box {
-            max-width: 800px;
+            max-width: 900px;
             margin: auto;
+            background-color: #2b2b2b;
+            padding: 30px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+            border-radius: 8px;
+        }
+        h1, h2 {
+            color: #eaeaea;
+        }
+        h2 {
+            margin-top: 40px;
+        }
+        p {
+            line-height: 1.6;
+        }
+        .archive-item {
+            background: #3b3b3b;
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>Welcome to My GitHub Page!</h1>
+        <h1>Archive Information of Historical Figure</h1>
     </header>
 
     <nav>
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
+        <a href="index.html">Home</a>
+        <a href="biography.html">Biography</a>
+        <a href="bibliography.html">Bibliography</a>
+        <a href="archive.html">Archive Information</a>
+        <a href="contact.html">Contact</a>
     </nav>
 
     <main>
         <div class="content-box">
-            <section id="home">
-                <h2>Home</h2>
-                <p>Hello! I'm <strong>Your Name</strong>, and this is my personal GitHub Pages website.</p>
-            </section>
-
-            <section id="about">
-                <h2>About Me</h2>
-                <p>I'm a passionate developer with interests in web development, open-source projects, and more.</p>
-            </section>
-
-            <section id="projects">
-                <h2>My Projects</h2>
-                <ul>
-                    <li><a href="https://github.com/<your-username>/project1" target="_blank">Project 1</a> - Description of project 1.</li>
-                    <li><a href="https://github.com/<your-username>/project2" target="_blank">Project 2</a> - Description of project 2.</li>
-                    <li><a href="https://github.com/<your-username>/project3" target="_blank">Project 3</a> - Description of project 3.</li>
-                </ul>
-            </section>
-
-            <section id="contact">
-                <h2>Contact Me</h2>
-                <p>You can reach me at <a href="mailto:your.email@example.com">your.email@example.com</a>.</p>
+            <section id="archive">
+                <h2>Where to Find Original Documents</h2>
+                <p>The following archives hold original documents, letters, and manuscripts related to the historical figure. Contact the institutions below for more information or to arrange a visit.</p>
+                <div class="archive-item">
+                    <h3>National Library Archive</h3>
+                    <p>Location: 123 Library St, Capital City</p>
+                    <p>Description: The National Library Archive contains numerous letters and original manuscripts from the historical figure. It is open to researchers and the general public.</p>
+                    <p>Contact: <a href="mailto:info@nationallibrary.com" class="pdf-link">info@nationallibrary.com</a></p>
+                </div>
+                <div class="archive-item">
+                    <h3>University Archive</h3>
+                    <p>Location: 456 University Ave, Academic Town</p>
+                    <p>Description: The University Archive houses personal diaries and early drafts of many important works. Access is granted by appointment.</p>
+                    <p>Contact: <a href="mailto:archive@university.com" class="pdf-link">archive@university.com</a></p>
+                </div>
+                <div class="archive-item">
+                    <h3>Historical Society Records</h3>
+                    <p>Location: 789 History Rd, Heritage City</p>
+                    <p>Description: The Historical Society has a collection of speeches, photographs, and other significant materials that document the historical figure's public life.</p>
+                    <p>Contact: <a href="mailto:records@historicalsociety.com" class="pdf-link">records@historicalsociety.com</a></p>
+                </div>
             </section>
         </div>
     </main>
 
     <footer>
-        &copy; 2024 Your Name. All rights reserved.
+        &copy; 2024 Historical Figure Page. All rights reserved.
     </footer>
 
 </body>
