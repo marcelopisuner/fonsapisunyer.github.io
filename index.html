@@ -1,67 +1,150 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>El Mundo de Sof</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Historical Figure Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        nav {
+            background-color: #444;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        nav a {
+            margin: 0 15px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #f6f8fa;
+        }
+        main {
+            padding: 40px;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        .content-box {
+            max-width: 800px;
+            margin: auto;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        h2 {
+            margin-top: 40px;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        ul li {
+            background: #f6f8fa;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 5px;
+            transition: transform 0.3s;
+        }
+        ul li:hover {
+            transform: scale(1.02);
+        }
+        a.project-link {
+            color: #0366d6;
+            text-decoration: none;
+        }
+        a.project-link:hover {
+            text-decoration: underline;
+        }
+        .hero {
+            background-image: url('https://via.placeholder.com/1200x400');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+            margin-bottom: 40px;
+        }
+        .hero h1 {
+            font-size: 3em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+    </style>
 </head>
 <body>
+
     <header>
-        <nav>
-            <ul>
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">Blog</a>
-                    <ul>
-                        <li><a href="#">Recetas</a></li>
-                        <li><a href="#">Viajes</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">Sobre mí</a></li>
-                <li><a href="#">Contacto</a></li>
-            </ul>
-        </nav>
+        <h1>Historical Figure Name</h1>
     </header>
+
+    <nav>
+        <a href="#biography">Biography</a>
+        <a href="#bibliography">Bibliography</a>
+        <a href="#archive">Archive Information</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="hero">
+        <h1>A Legacy Remembered</h1>
+    </div>
+
     <main>
-        <section id="blog-posts">
-            <article>
-                <h2>Orquidario de Estepona: un paraíso en la Costa del Sol</h2>
-                <p>El Parque Botánico de Estepona, conocido como Orchidarium u Orquidario de Estepona, no es un simple invernadero...</p>
-                <a href="#">Leer más &raquo;</a>
-            </article>
-            <article>
-                <h2>Girona se viste de un ambiente festivo para otra temporada de Temps de Flors</h2>
-                <p>Este 2024, Girona se adorna con flores, colores y un ambiente festivo para recibir la edición número 69 del festival...</p>
-                <a href="#">Leer más &raquo;</a>
-            </article>
-            <!-- Add more articles as needed -->
-        </section>
-        <section id="about">
-            <h2>Sobre mí</h2>
-            <p>Hola, soy Sof, nací y crecí en México. Estudié una licenciatura en Administración de Hoteles y ahora empiezo una nueva aventura en Barcelona...</p>
-            <a href="#">Saber más &raquo;</a>
-        </section>
-        <section id="contact">
-            <h2>Contacto</h2>
-            <form>
-                <label for="name">Nombre:</label>
-                <input type="text" id="name" name="name" required>
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-                <label for="message">Mensaje:</label>
-                <textarea id="message" name="message" required></textarea>
-                <button type="submit">Enviar</button>
-            </form>
-        </section>
+        <div class="content-box">
+            <section id="biography">
+                <h2>Biography</h2>
+                <p>This is a detailed account of the historical figure's life. Born in the early 20th century, they contributed significantly to the field of literature, philosophy, and social reform. The biography details their struggles, successes, and their impact on modern society.</p>
+            </section>
+
+            <section id="bibliography">
+                <h2>Bibliography</h2>
+                <ul>
+                    <li><a class="project-link" href="pdfs/book1.pdf" target="_blank">Book Title 1</a> - Published in 1930, this book explores the ideas of social justice and reform.</li>
+                    <li><a class="project-link" href="pdfs/book2.pdf" target="_blank">Book Title 2</a> - A treatise on modern philosophy and ethics, published in 1945.</li>
+                    <li><a class="project-link" href="pdfs/book3.pdf" target="_blank">Book Title 3</a> - A collection of speeches and writings that inspired a generation.</li>
+                </ul>
+            </section>
+
+            <section id="archive">
+                <h2>Archive Information</h2>
+                <p>The original documents, letters, and manuscripts of this historical figure are preserved in the National Library and various university archives. For access to specific materials, you can contact the respective institutions.</p>
+            </section>
+
+            <section id="contact">
+                <h2>Contact</h2>
+                <p>For inquiries, you can reach the archivist at <a href="mailto:archivist.email@example.com">archivist.email@example.com</a>.</p>
+            </section>
+        </div>
     </main>
+
     <footer>
-        <p>Sígueme en:</p>
-        <ul>
-            <li><a href="https://www.pinterest.com.mx">Pinterest</a></li>
-            <li><a href="https://www.instagram.com">Instagram</a></li>
-            <li><a href="https://www.facebook.com">Facebook</a></li>
-            <li><a href="https://www.youtube.com">YouTube</a></li>
-        </ul>
+        &copy; 2024 Historical Figure Page. All rights reserved.
     </footer>
+
 </body>
 </html>
