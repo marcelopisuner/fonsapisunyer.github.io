@@ -1,180 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to My GitHub Page</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-        header {
-            background-color: #0366d6;
-            color: white;
-            padding: 40px;
-            text-align: center;
-        }
-        nav {
-            background-color: #24292e;
-            padding: 15px;
-            text-align: center;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        nav a {
-            margin: 0 15px;
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s;
-        }
-        nav a:hover {
-            color: #f6f8fa;
-        }
-        main {
-            padding: 40px;
-        }
-        footer {
-            background-color: #24292e;
-            color: white;
-            padding: 20px;
-            text-align: center;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-        }
-        .content-box {
-            max-width: 800px;
-            margin: auto;
-            background-color: white;
-            padding: 20px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-        }
-        h1, h2 {
-            color: #0366d6;
-        }
-        h2 {
-            margin-top: 40px;
-        }
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-        ul li {
-            background: #f6f8fa;
-            margin: 10px 0;
-            padding: 15px;
-            border-radius: 5px;
-            transition: transform 0.3s;
-        }
-        ul li:hover {
-            transform: scale(1.02);
-        }
-        a.project-link {
-            color: #0366d6;
-            text-decoration: none;
-        }
-        a.project-link:hover {
-            text-decoration: underline;
-        }
-        .hero {
-            background-image: url('https://via.placeholder.com/1200x400');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            text-align: center;
-            padding: 100px 20px;
-            margin-bottom: 40px;
-        }
-        .hero h1 {
-            font-size: 3em;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        }
-        .contact-form {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            margin-top: 20px;
-        }
-        .contact-form input, .contact-form textarea {
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        .contact-form button {
-            padding: 10px;
-            background-color: #0366d6;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        .contact-form button:hover {
-            background-color: #024ea2;
-        }
-    </style>
+    <title>El Mundo de Sof</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
     <header>
-        <h1>Welcome to My GitHub Page!</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Blog</a>
+                    <ul>
+                        <li><a href="#">Recetas</a></li>
+                        <li><a href="#">Viajes</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Sobre mí</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </nav>
     </header>
-
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-    </nav>
-
-    <div class="hero">
-        <h1>Building Solutions, One Project at a Time</h1>
-    </div>
-
     <main>
-        <div class="content-box">
-            <section id="home">
-                <h2>Home</h2>
-                <p>Hello! I'm <strong>Your Name</strong>, and this is my personal GitHub Pages website. I love coding and solving problems through creative and efficient solutions.</p>
-            </section>
-
-            <section id="about">
-                <h2>About Me</h2>
-                <p>I'm a passionate developer with interests in web development, open-source projects, and more. I enjoy learning new technologies and applying them to real-world projects.</p>
-                <p>When I'm not coding, you can find me hiking, reading, or contributing to open-source communities.</p>
-            </section>
-
-            <section id="projects">
-                <h2>My Projects</h2>
-                <ul>
-                    <li><a class="project-link" href="https://github.com/<your-username>/project1" target="_blank">Project 1</a> - A web application built using React and Node.js for managing personal finances.</li>
-                    <li><a class="project-link" href="https://github.com/<your-username>/project2" target="_blank">Project 2</a> - A machine learning project that predicts housing prices based on various features.</li>
-                    <li><a class="project-link" href="https://github.com/<your-username>/project3" target="_blank">Project 3</a> - A Python-based automation tool that helps streamline repetitive tasks.</li>
-                </ul>
-            </section>
-
-            <section id="contact">
-                <h2>Contact Me</h2>
-                <p>You can reach me at <a href="mailto:your.email@example.com">your.email@example.com</a>.</p>
-                <form class="contact-form">
-                    <input type="text" name="name" placeholder="Your Name" required>
-                    <input type="email" name="email" placeholder="Your Email" required>
-                    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-                    <button type="submit">Send Message</button>
-                </form>
-            </section>
-        </div>
+        <section id="blog-posts">
+            <article>
+                <h2>Orquidario de Estepona: un paraíso en la Costa del Sol</h2>
+                <p>El Parque Botánico de Estepona, conocido como Orchidarium u Orquidario de Estepona, no es un simple invernadero...</p>
+                <a href="#">Leer más &raquo;</a>
+            </article>
+            <article>
+                <h2>Girona se viste de un ambiente festivo para otra temporada de Temps de Flors</h2>
+                <p>Este 2024, Girona se adorna con flores, colores y un ambiente festivo para recibir la edición número 69 del festival...</p>
+                <a href="#">Leer más &raquo;</a>
+            </article>
+            <!-- Add more articles as needed -->
+        </section>
+        <section id="about">
+            <h2>Sobre mí</h2>
+            <p>Hola, soy Sof, nací y crecí en México. Estudié una licenciatura en Administración de Hoteles y ahora empiezo una nueva aventura en Barcelona...</p>
+            <a href="#">Saber más &raquo;</a>
+        </section>
+        <section id="contact">
+            <h2>Contacto</h2>
+            <form>
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Mensaje:</label>
+                <textarea id="message" name="message" required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
     </main>
-
     <footer>
-        &copy; 2024 Your Name. All rights reserved.
+        <p>Sígueme en:</p>
+        <ul>
+            <li><a href="https://www.pinterest.com.mx">Pinterest</a></li>
+            <li><a href="https://www.instagram.com">Instagram</a></li>
+            <li><a href="https://www.facebook.com">Facebook</a></li>
+            <li><a href="https://www.youtube.com">YouTube</a></li>
+        </ul>
     </footer>
-
 </body>
 </html>
