@@ -9,7 +9,7 @@
         :root {
             --primary-color: #4a90e2;
             --secondary-color: #2c3e50;
-            --background-color: #1b1b1b;
+            --background-color: #000000; /* Changed to pure black */
             --text-color: #eaeaea;
             --card-background: #2b2b2b;
             --card-shadow: rgba(0, 0, 0, 0.5);
@@ -44,6 +44,10 @@
             padding: 15px;
             text-align: center;
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
         }
 
         nav a {
@@ -77,7 +81,7 @@
         }
 
         main {
-            padding: 20px;
+            padding: 100px 20px 20px; /* Added top padding to account for fixed nav */
             display: flex;
             justify-content: center;
         }
@@ -89,6 +93,8 @@
             padding: 30px;
             box-shadow: 0px 4px 8px var(--card-shadow);
             border-radius: 12px;
+            position: relative;
+            z-index: 1;
         }
 
         h1, h2, h3, h4 {
@@ -164,6 +170,29 @@
         .biography-image img:hover {
             transform: scale(1.05);
             filter: grayscale(0%);
+        }
+
+        /* Full-Page Image Sections */
+        .full-page-image {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            display: none; /* Initially hidden */
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .full-page-image.visible {
+            display: block;
+            opacity: 1;
+        }
+
+        .full-page-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.7);
         }
 
         footer {
@@ -434,6 +463,17 @@
         </div>
     </main>
 
+    <!-- Full-Page Image Sections -->
+    <section class="full-page-image" id="full-page-image-1">
+        <img src="images/fullpage1.jpg" alt="Full-Page Image 1">
+    </section>
+
+    <section class="full-page-image" id="full-page-image-2">
+        <img src="images/fullpage2.jpg" alt="Full-Page Image 2">
+    </section>
+
+    <!-- Add more full-page images as needed -->
+
     <footer>
         &copy; 2024 Página de Figura Histórica. Todos los derechos reservados.
     </footer>
@@ -441,20 +481,41 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const sections = document.querySelectorAll('.biography-section');
+            const fullPageImages = document.querySelectorAll('.full-page-image');
 
-            const observer = new IntersectionObserver(entries => {
+            const observerOptions = {
+                threshold: 0.1
+            };
+
+            // Fade-in effect for biography sections
+            const sectionObserver = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
                     if(entry.isIntersecting){
                         entry.target.classList.add('visible');
                         observer.unobserve(entry.target);
                     }
                 });
-            }, {
-                threshold: 0.1
-            });
+            }, observerOptions);
 
             sections.forEach(section => {
-                observer.observe(section);
+                sectionObserver.observe(section);
+            });
+
+            // Scroll-triggered full-page images
+            const imageObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if(entry.isIntersecting){
+                        entry.target.classList.add('visible');
+                    } else {
+                        entry.target.classList.remove('visible');
+                    }
+                });
+            }, {
+                threshold: 0.5 // Adjust as needed
+            });
+
+            fullPageImages.forEach(imageSection => {
+                imageObserver.observe(imageSection);
             });
         });
     </script>
