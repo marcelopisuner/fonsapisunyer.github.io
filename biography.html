@@ -4,15 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Biografía - Augusto Pi-Suñer</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary-color: #4a90e2;
             --secondary-color: #2c3e50;
-            --background-color: #000000; /* Changed to pure black */
-            --text-color: #eaeaea;
-            --card-background: #000000;
-            --card-shadow: rgba(0, 0, 0, 0.5);
+            --accent-color: #8e44ad; /* Violet accent */
+            --background-color: #000000; /* Pure black background */
+            --text-color: #eaeaea; /* Light grey text */
+            --card-background: #1a1a1a; /* Slightly lighter black for content boxes */
+            --card-shadow: rgba(0, 0, 0, 0.5); /* Shadow for content boxes */
+            --hover-color: #8e44ad; /* Violet hover color for buttons */
+            --menu-bg-color: rgba(42, 42, 42, 0.95); /* Semi-transparent dark background for side menu */
         }
 
         body {
@@ -25,63 +28,83 @@
             font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
+            overflow-x: hidden; /* Prevent horizontal scroll */
         }
 
+        /* Header Styling */
         header {
-            background-color: var(--secondary-color);
-            color: white;
-            padding: 40px;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            padding: 20px 20px;
             text-align: center;
+            position: relative;
+            z-index: 1001; /* Above the side menu */
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
         }
 
         header h1 {
             font-family: 'Montserrat', sans-serif;
             font-size: 2.5em;
+            margin: 0;
+            color: var(--accent-color); /* Violet title */
         }
 
-        nav {
-            background-color: #444;
-            padding: 15px;
-            text-align: center;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-            position: fixed;
+        /* Hamburger Menu Icon */
+        .hamburger {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 30px;
+            height: 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            cursor: pointer;
+            z-index: 1002;
+        }
+
+        .hamburger div {
             width: 100%;
+            height: 4px;
+            background-color: var(--text-color);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        /* Side Navigation Menu */
+        .side-menu {
+            position: fixed;
             top: 0;
+            left: -250px; /* Hidden by default */
+            width: 250px;
+            height: 100%;
+            background-color: var(--menu-bg-color);
+            padding-top: 60px;
+            transition: left 0.3s ease;
             z-index: 1000;
         }
 
-        nav a {
-            margin: 0 15px;
-            color: white;
+        .side-menu.active {
+            left: 0; /* Show the menu */
+        }
+
+        .side-menu a {
+            display: block;
+            padding: 15px 25px;
             text-decoration: none;
-            font-weight: bold;
-            position: relative;
-            display: inline-block;
-            padding-bottom: 5px;
-            transition: color 0.3s;
+            color: var(--text-color);
+            font-size: 1.1em;
+            transition: background-color 0.3s, color 0.3s;
         }
 
-        nav a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            background: var(--primary-color);
-            left: 0;
-            bottom: 0;
-            transition: width 0.3s ease;
+        .side-menu a:hover {
+            background-color: var(--accent-color);
+            color: #ffffff;
         }
 
-        nav a:hover {
-            color: var(--primary-color);
-        }
-
-        nav a:hover::after {
-            width: 100%;
-        }
-
+        /* Main Content */
         main {
-            padding: 100px 20px 20px; /* Added top padding to account for fixed nav */
+            padding: 100px 20px 20px; /* Added top padding to account for header */
             display: flex;
             justify-content: center;
         }
@@ -89,7 +112,7 @@
         .content-box {
             max-width: 900px; /* Set maximum width for the content box */
             width: 100%;
-            background-color: rgba(43, 43, 43, 0.9);
+            background-color: var(--card-background);
             padding: 30px;
             box-shadow: 0px 4px 8px var(--card-shadow);
             border-radius: 12px;
@@ -109,12 +132,12 @@
 
         h3 {
             margin-top: 30px;
-            color: var(--primary-color);
+            color: var(--accent-color);
         }
 
         h4 {
             margin-top: 25px;
-            color: var(--primary-color);
+            color: var(--accent-color);
         }
 
         p {
@@ -195,6 +218,7 @@
             filter: brightness(0.7);
         }
 
+        /* Footer Styling */
         footer {
             background-color: var(--secondary-color);
             color: white;
@@ -221,15 +245,6 @@
                 padding: 20px;
             }
 
-            nav {
-                padding: 10px;
-            }
-
-            nav a {
-                margin: 0 10px;
-                font-size: 0.9em;
-            }
-
             .content-box {
                 padding: 20px;
             }
@@ -238,21 +253,30 @@
                 padding: 15px;
                 font-size: 0.9em;
             }
+
+            .hamburger {
+                top: 15px;
+                left: 15px;
+            }
         }
     </style>
 </head>
 <body>
 
+    <!-- Header with Hamburger Menu -->
     <header>
+        <div class="hamburger" id="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
         <h1>Biografía de Augusto Pi-Suñer</h1>
     </header>
 
-    <nav>
-        <a href="index.html">Inicio</a>
-        <a href="biography.html">Biografía</a>
-        <a href="bibliography.html">Bibliografía</a>
-        <a href="archive.html">Información de Archivo</a>
-        <a href="contact.html">Contacto</a>
+    <!-- Side Navigation Menu -->
+    <nav class="side-menu" id="side-menu">
+        <a href="biography.html">Consulta Biografía</a>
+        <a href="bibliography.html">Consulta Bibliografía</a>
     </nav>
 
     <main>
@@ -479,6 +503,22 @@
     </footer>
 
     <script>
+        // Toggle Side Menu
+        const hamburger = document.getElementById('hamburger');
+        const sideMenu = document.getElementById('side-menu');
+
+        hamburger.addEventListener('click', () => {
+            sideMenu.classList.toggle('active');
+        });
+
+        // Close side menu when clicking outside
+        document.addEventListener('click', (event) => {
+            if (!sideMenu.contains(event.target) && !hamburger.contains(event.target)) {
+                sideMenu.classList.remove('active');
+            }
+        });
+
+        // Intersection Observer for Biography Sections
         document.addEventListener('DOMContentLoaded', () => {
             const sections = document.querySelectorAll('.biography-section');
             const fullPageImages = document.querySelectorAll('.full-page-image');
