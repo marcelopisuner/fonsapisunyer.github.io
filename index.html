@@ -1,131 +1,129 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Historical Figure Page</title>
-    <link href="https://fonts.googleapis.com/css2?family=Georgia:wght@400;700&display=swap" rel="stylesheet">
+    <title>Página Principal - Figura Histórica</title>
+    <link href="https://fonts.googleapis.com/css2?family=Georgia:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary-color: #4a90e2;
+            --secondary-color: #2c3e50;
+            --background-color: #ffffff; /* Pure white background */
+            --text-color: #333333; /* Dark grey text for readability */
+            --card-background: #f9f9f9; /* Light grey for interactive squares */
+            --card-shadow: rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            --hover-color: #e0e0e0; /* Light hover effect */
+        }
+
         body {
-            font-family: 'Georgia', serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
+
         header {
-            background-color: #333;
-            color: white;
-            padding: 40px;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            padding: 40px 20px;
             text-align: center;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
         }
-        nav {
-            background-color: #444;
-            padding: 15px;
-            text-align: center;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+
+        header h1 {
+            font-family: 'Georgia', serif;
+            font-size: 2.5em;
+            margin: 0;
         }
-        nav a {
-            margin: 0 15px;
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s;
-        }
-        nav a:hover {
-            color: #f6f8fa;
-        }
+
         main {
-            padding: 40px;
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
         }
-        footer {
-            background-color: #333;
-            color: white;
-            padding: 20px;
-            text-align: center;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-        }
-        .content-box {
+
+        .interactive-squares {
+            display: flex;
+            gap: 40px;
+            flex-wrap: wrap;
+            justify-content: center;
             max-width: 800px;
-            margin: auto;
-            background-color: white;
-            padding: 20px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
+            width: 100%;
         }
-        h1, h2 {
-            color: #333;
-        }
-        h2 {
-            margin-top: 40px;
-        }
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-        ul li {
-            background: #f6f8fa;
-            margin: 10px 0;
-            padding: 15px;
-            border-radius: 5px;
-            transition: transform 0.3s;
-        }
-        ul li:hover {
-            transform: scale(1.02);
-        }
-        a.project-link {
-            color: #0366d6;
-            text-decoration: none;
-        }
-        a.project-link:hover {
-            text-decoration: underline;
-        }
-        .hero {
-            background-image: url('images/historical-figure.jpg');
-            background-size: cover;
-            background-position: center;
-            color: white;
+
+        .square {
+            background-color: var(--card-background);
+            width: 200px;
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             text-align: center;
-            padding: 100px 20px;
-            margin-bottom: 40px;
+            border-radius: 12px;
+            box-shadow: 0px 4px 8px var(--card-shadow);
+            transition: background-color 0.3s, transform 0.3s;
         }
-        .hero h1 {
-            font-size: 3em;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+
+        .square:hover {
+            background-color: var(--hover-color);
+            transform: translateY(-5px);
+        }
+
+        .square a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-size: 1.2em;
+            font-weight: bold;
+            font-family: 'Georgia', serif;
+        }
+
+        footer {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            padding: 20px;
+            text-align: center;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .square {
+                width: 150px;
+                height: 150px;
+            }
+
+            .square a {
+                font-size: 1em;
+            }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>Historical Figure Name</h1>
+        <h1>Figura Histórica</h1>
     </header>
 
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="biography.html">Biography</a>
-        <a href="bibliography.html">Bibliography</a>
-        <a href="archive.html">Archive Information</a>
-        <a href="contact.html">Contact</a>
-    </nav>
-
-    <div class="hero">
-        <h1>A Legacy Remembered</h1>
-    </div>
-
     <main>
-        <div class="content-box">
-            <section id="home">
-                <h2>Welcome to the Historical Figure Page</h2>
-                <p>Discover the life, works, and legacy of one of history's most impactful figures. Use the navigation above to explore their biography, published works, archived documents, and more.</p>
-            </section>
+        <div class="interactive-squares">
+            <div class="square">
+                <a href="biography.html">Consulta Biografía</a>
+            </div>
+            <div class="square">
+                <a href="bibliography.html">Consulta Bibliografía</a>
+            </div>
         </div>
     </main>
 
     <footer>
-        &copy; 2024 Historical Figure Page. All rights reserved.
+        &copy; 2024 Página de Figura Histórica. Todos los derechos reservados.
     </footer>
 
 </body>
