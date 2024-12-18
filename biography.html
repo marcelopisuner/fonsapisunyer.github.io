@@ -17,7 +17,7 @@
 
         body {
             background-color: var(--background-color);
-            background-image: url('images/background-pattern.png');
+            background-image: url('images/background-pattern.png'); /* Ensure this image is subtle */
             background-size: cover;
             background-repeat: no-repeat;
             background-attachment: fixed;
@@ -77,12 +77,11 @@
         }
 
         main {
-            padding: 40px;
+            padding: 20px; /* Reduced padding for full-width */
         }
 
         .content-box {
-            max-width: 900px;
-            margin: auto;
+            width: 100%; /* Full-width */
             background-color: rgba(43, 43, 43, 0.9);
             padding: 30px;
             box-shadow: 0px 4px 8px var(--card-shadow);
@@ -319,7 +318,7 @@
                 </div>
             </section>
 
-            <!-- Secció Opcional de Cronologia -->
+            <!-- Optional Timeline Section -->
             <section id="timeline">
                 <h2>Cronologia</h2>
                 <div class="timeline-container">
@@ -335,7 +334,7 @@
                             <p>Graduat de la universitat.</p>
                         </div>
                     </div>
-                    <!-- Afegeix més elements de la cronologia segons sigui necessari -->
+                    <!-- Add more timeline items as needed -->
                 </div>
             </section>
         </div>
