@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="ca">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Biografia - Figura Històrica</title>
+    <title>Biografía - Augusto Pi-Suñer</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -77,18 +77,21 @@
         }
 
         main {
-            padding: 20px; /* Reduced padding for full-width */
+            padding: 20px;
+            display: flex;
+            justify-content: center;
         }
 
         .content-box {
-            width: 100%; /* Full-width */
+            max-width: 900px; /* Set maximum width for the content box */
+            width: 100%;
             background-color: rgba(43, 43, 43, 0.9);
             padding: 30px;
             box-shadow: 0px 4px 8px var(--card-shadow);
             border-radius: 12px;
         }
 
-        h1, h2 {
+        h1, h2, h3, h4 {
             color: var(--text-color);
         }
 
@@ -96,6 +99,16 @@
             margin-top: 40px;
             border-bottom: 2px solid var(--primary-color);
             padding-bottom: 10px;
+        }
+
+        h3 {
+            margin-top: 30px;
+            color: var(--primary-color);
+        }
+
+        h4 {
+            margin-top: 25px;
+            color: var(--primary-color);
         }
 
         p {
@@ -153,80 +166,6 @@
             filter: grayscale(0%);
         }
 
-        #timeline {
-            margin-top: 60px;
-        }
-
-        #timeline h2 {
-            border-bottom: 2px solid var(--primary-color);
-            padding-bottom: 10px;
-        }
-
-        .timeline-container {
-            position: relative;
-            padding: 20px 0;
-        }
-
-        .timeline-container::before {
-            content: '';
-            position: absolute;
-            left: 50%;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: var(--primary-color);
-            transform: translateX(-50%);
-        }
-
-        .timeline-item {
-            position: relative;
-            width: 50%;
-            padding: 20px 40px;
-            box-sizing: border-box;
-        }
-
-        .timeline-item:nth-child(odd) {
-            left: 0;
-        }
-
-        .timeline-item:nth-child(even) {
-            left: 50%;
-        }
-
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            top: 20px;
-            right: -8px;
-            width: 16px;
-            height: 16px;
-            background: var(--primary-color);
-            border-radius: 50%;
-            z-index: 1;
-        }
-
-        .timeline-item:nth-child(even)::before {
-            left: -8px;
-        }
-
-        .timeline-content {
-            background: var(--card-background);
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0px 4px 8px var(--card-shadow);
-            transition: transform 0.3s ease, background 0.3s ease;
-        }
-
-        .timeline-content:hover {
-            transform: translateY(-5px);
-            background: #3c3c3c;
-        }
-
-        .timeline-content h3 {
-            margin-top: 0;
-            color: var(--primary-color);
-        }
-
         footer {
             background-color: var(--secondary-color);
             color: white;
@@ -276,148 +215,227 @@
 <body>
 
     <header>
-        <h1>Biografia de Figura Històrica</h1>
+        <h1>Biografía de Augusto Pi-Suñer</h1>
     </header>
 
     <nav>
-        <a href="index.html">Inici</a>
-        <a href="biography.html">Biografia</a>
-        <a href="bibliography.html">Bibliografia</a>
-        <a href="archive.html">Informació d'Arxiu</a>
-        <a href="contact.html">Contacte</a>
+        <a href="index.html">Inicio</a>
+        <a href="biography.html">Biografía</a>
+        <a href="bibliography.html">Bibliografía</a>
+        <a href="archive.html">Información de Archivo</a>
+        <a href="contact.html">Contacto</a>
     </nav>
 
     <main>
         <div class="content-box">
-            <!-- Catalan Biography Section -->
-            <section id="biography">
-                <div class="biography-section">
-                    <div class="biography-text">
-                        <h2>Inici de la Vida</h2>
-                        <p>Aquesta figura històrica va néixer en un petit poble a principis del segle XX. Des de ben jove, va mostrar un talent notable en la literatura i un profund interès en la reforma social, cosa que va donar forma a les seves futures contribucions a la societat.</p>
-                    </div>
-                    <div class="biography-image">
-                        <img src="images/historical-figure.jpg" alt="Figura Històrica">
-                    </div>
-                </div>
-
-                <div class="biography-section">
-                    <div class="biography-text">
-                        <h2>Carrera i Aconseguiments</h2>
-                        <p>La carrera d'aquesta figura històrica va estar marcada per assoliments innovadors en diversos camps, incloent la literatura, la filosofia i l'advocacia social. Va escriure nombroses obres que van inspirar milions de persones i va liderar iniciatives destinades a millorar les vides de les comunitats marginades.</p>
-                    </div>
-                    <div class="biography-image">
-                        <img src="images/historical-figure-achievements.jpg" alt="Aconseguiments de la Figura Històrica">
-                    </div>
-                </div>
-
-                <div class="biography-section">
-                    <div class="biography-text">
-                        <h2>Llegat</h2>
-                        <p>L'impacte de la feina d'aquesta figura continua ressonant avui dia. Les seves escriptures encara s'estudien i la seva defensa dels drets humans ha deixat una empremta inesborrable en la societat moderna. La seva dedicació a la justícia social serveix d'inspiració per a molts.</p>
-                    </div>
-                </div>
-            </section>
-
             <!-- Spanish Biography Section -->
             <section id="biography-spanish">
                 <h2>Biografía en Español: Augusto Pi-Suñer</h2>
 
                 <!-- Juventud -->
-                <h3>Juventud</h3>
-                <p>Augusto Pi-Suñer nació el 12 de agosto de 1879 en Barcelona, en el seno de una familia de médicos con profundas raíces en la historia de Cataluña. Su padre, Jaume Pi-Suñer, era un destacado catedrático de Patología General en la Universidad de Barcelona y uno de los pioneros de la medicina científica en la región. Su madre, Carolina Sunyer Quintana, también provenía de una familia de médicos y figuras relevantes. Esta tradición médica influyó significativamente en la vida y formación de Augusto, quien desde muy joven mostró un gran interés por la ciencia y el conocimiento.</p>
-                <p>La infancia de Augusto estuvo marcada por el ambiente intelectual y científico en el que creció. Su padre, Jaume, ejercía no solo como catedrático, sino también como investigador en el Laboratorio Municipal de Barcelona, donde se realizaban estudios pioneros en bacteriología y fisiología. En este entorno, Augusto tuvo sus primeros acercamientos al mundo de la investigación. La figura de su padre fue fundamental, pero también lo fue la de Ramón Turró, un destacado investigador que colaboraba con su padre y que se convirtió en mentor de Augusto tras la temprana muerte de Jaume en 1897, cuando Augusto tenía solo 17 años.</p>
-                <p>La muerte de su padre dejó a la familia en una situación económica complicada, lo cual obligó a Augusto a combinar sus estudios con el trabajo. No obstante, su pasión por la ciencia nunca disminuyó. A los 20 años, en 1899, se licenció en Medicina en la Universidad de Barcelona, y un año después, en 1900, presentó su tesis doctoral en Madrid sobre "La Vida Anaerobia", un tema innovador que exploraba la relación entre la química y los procesos biológicos.</p>
+                <div class="biography-section">
+                    <div class="biography-text">
+                        <h3>Juventud</h3>
+                        <p>Augusto Pi-Suñer nació el 12 de agosto de 1879 en Barcelona, en el seno de una familia de médicos con profundas raíces en la historia de Cataluña. Su padre, Jaume Pi-Suñer, era un destacado catedrático de Patología General en la Universidad de Barcelona y uno de los pioneros de la medicina científica en la región. Su madre, Carolina Sunyer Quintana, también provenía de una familia de médicos y figuras relevantes. Esta tradición médica influyó significativamente en la vida y formación de Augusto, quien desde muy joven mostró un gran interés por la ciencia y el conocimiento.</p>
+                        <p>La infancia de Augusto estuvo marcada por el ambiente intelectual y científico en el que creció. Su padre, Jaume, ejercía no solo como catedrático, sino también como investigador en el Laboratorio Municipal de Barcelona, donde se realizaban estudios pioneros en bacteriología y fisiología. En este entorno, Augusto tuvo sus primeros acercamientos al mundo de la investigación. La figura de su padre fue fundamental, pero también lo fue la de Ramón Turró, un destacado investigador que colaboraba con su padre y que se convirtió en mentor de Augusto tras la temprana muerte de Jaume en 1897, cuando Augusto tenía solo 17 años.</p>
+                        <p>La muerte de su padre dejó a la familia en una situación económica complicada, lo cual obligó a Augusto a combinar sus estudios con el trabajo. No obstante, su pasión por la ciencia nunca disminuyó. A los 20 años, en 1899, se licenció en Medicina en la Universidad de Barcelona, y un año después, en 1900, presentó su tesis doctoral en Madrid sobre "La Vida Anaerobia", un tema innovador que exploraba la relación entre la química y los procesos biológicos.</p>
+                    </div>
+                    <div class="biography-image">
+                        <img src="images/juventud-augusto-pi-sunyer.jpg" alt="Juventud de Augusto Pi-Suñer">
+                    </div>
+                </div>
 
-                <!-- Carrera profesional -->
-                <h3>Carrera profesional</h3>
-                <h4>Inicio de la Carrera Académica y Profesional</h4>
-                <p>En 1902, apenas dos años después de doctorarse, Augusto comenzó a trabajar como profesor auxiliar de Fisiología en la Universidad de Barcelona. Paralelamente, desempeñó un papel importante en el Laboratorio Municipal de Barcelona, bajo la dirección de Ramón Turró, un mentor y colega que influyó significativamente en su carrera. Este laboratorio era uno de los centros de investigación más importantes de la época, y allí Pi-Suñer tuvo la oportunidad de trabajar en estudios pioneros sobre inmunidad y metabolismo.</p>
-                <p>En 1904, Augusto ganó la cátedra de Fisiología en la Universidad de Sevilla, un logro que mostraba su gran potencial académico. Sin embargo, su corazón siempre estuvo en Barcelona, y pronto se dio cuenta de que su verdadera vocación era seguir investigando y enseñando en su ciudad natal. Aunque ocupó brevemente la cátedra en Sevilla, logró obtener permisos para continuar sus investigaciones en Barcelona, y en 1908 renunció definitivamente a la posición en Sevilla. Su deseo de permanecer en Cataluña y fortalecer el trabajo científico en su región era evidente desde el inicio de su carrera.</p>
+                <!-- Carrera Profesional -->
+                <div class="biography-section">
+                    <div class="biography-text">
+                        <h3>Carrera Profesional</h3>
+                        <h4>Inicio de la Carrera Académica y Profesional</h4>
+                        <p>En 1902, apenas dos años después de doctorarse, Augusto comenzó a trabajar como profesor auxiliar de Fisiología en la Universidad de Barcelona. Paralelamente, desempeñó un papel importante en el Laboratorio Municipal de Barcelona, bajo la dirección de Ramón Turró, un mentor y colega que influyó significativamente en su carrera. Este laboratorio era uno de los centros de investigación más importantes de la época, y allí Pi-Suñer tuvo la oportunidad de trabajar en estudios pioneros sobre inmunidad y metabolismo.</p>
+                        <p>En 1904, Augusto ganó la cátedra de Fisiología en la Universidad de Sevilla, un logro que mostraba su gran potencial académico. Sin embargo, su corazón siempre estuvo en Barcelona, y pronto se dio cuenta de que su verdadera vocación era seguir investigando y enseñando en su ciudad natal. Aunque ocupó brevemente la cátedra en Sevilla, logró obtener permisos para continuar sus investigaciones en Barcelona, y en 1908 renunció definitivamente a la posición en Sevilla. Su deseo de permanecer en Cataluña y fortalecer el trabajo científico en su región era evidente desde el inicio de su carrera.</p>
+                    </div>
+                    <div class="biography-image">
+                        <img src="images/carrera-profesional-augusto-pi-sunyer.jpg" alt="Carrera Profesional de Augusto Pi-Suñer">
+                    </div>
+                </div>
 
-                <h4>Fundación del Instituto de Fisiología y Consolidación en la Universidad de Barcelona</h4>
-                <p>En 1914, Pi-Suñer fue nombrado profesor titular en la Universidad de Barcelona. Un año más tarde, tras la jubilación del profesor Ramón Coll y Pujol, obtuvo la cátedra de Fisiología de manera oficial. Este fue un punto de inflexión importante en su carrera, pues le permitió desarrollar proyectos de investigación de gran envergadura y formar a nuevas generaciones de médicos y científicos. Pi-Suñer creía en la importancia de la experimentación y el trabajo en equipo, y fomentó un ambiente de investigación interdisciplinaria en el cual la fisiología se combinaba con otras ciencias como la química y la biología.</p>
-                <p>En 1920, bajo el patronazgo de la Mancomunitat de Catalunya, se fundó el Instituto de Fisiología, una institución pionera en el ámbito de la investigación biomédica en España. Augusto Pi-Suñer fue designado director del Instituto, y bajo su liderazgo, este se convirtió en un centro de referencia para la investigación fisiológica no solo en Cataluña, sino en toda Europa. La creación de este instituto reflejaba su visión de la ciencia: una disciplina que debía estar al servicio de la sociedad y en constante avance. Pi-Suñer fue capaz de reunir un equipo de investigadores de primer nivel y establecer colaboraciones internacionales que elevaron la calidad y el prestigio de la investigación científica catalana.</p>
-                <p>Durante estos años, el Instituto de Fisiología se convirtió en un foro de intercambio de ideas y de desarrollo de nuevas técnicas de investigación. La escuela creada por Pi-Suñer era conocida por su enfoque riguroso y experimental, y sus estudios sobre el metabolismo, la inmunidad y la fisiología del sistema nervioso fueron fundamentales para el desarrollo de la medicina moderna. La institución también sirvió como un espacio para la formación de jóvenes investigadores, quienes encontraron en Pi-Suñer a un mentor dispuesto a compartir su conocimiento y experiencia.</p>
+                <div class="biography-section">
+                    <div class="biography-text">
+                        <h4>Fundación del Instituto de Fisiología y Consolidación en la Universidad de Barcelona</h4>
+                        <p>En 1914, Pi-Suñer fue nombrado profesor titular en la Universidad de Barcelona. Un año más tarde, tras la jubilación del profesor Ramón Coll y Pujol, obtuvo la cátedra de Fisiología de manera oficial. Este fue un punto de inflexión importante en su carrera, pues le permitió desarrollar proyectos de investigación de gran envergadura y formar a nuevas generaciones de médicos y científicos. Pi-Suñer creía en la importancia de la experimentación y el trabajo en equipo, y fomentó un ambiente de investigación interdisciplinaria en el cual la fisiología se combinaba con otras ciencias como la química y la biología.</p>
+                        <p>En 1920, bajo el patronazgo de la Mancomunitat de Catalunya, se fundó el Instituto de Fisiología, una institución pionera en el ámbito de la investigación biomédica en España. Augusto Pi-Suñer fue designado director del Instituto, y bajo su liderazgo, este se convirtió en un centro de referencia para la investigación fisiológica no solo en Cataluña, sino en toda Europa. La creación de este instituto reflejaba su visión de la ciencia: una disciplina que debía estar al servicio de la sociedad y en constante avance. Pi-Suñer fue capaz de reunir un equipo de investigadores de primer nivel y establecer colaboraciones internacionales que elevaron la calidad y el prestigio de la investigación científica catalana.</p>
+                        <p>Durante estos años, el Instituto de Fisiología se convirtió en un foro de intercambio de ideas y de desarrollo de nuevas técnicas de investigación. La escuela creada por Pi-Suñer era conocida por su enfoque riguroso y experimental, y sus estudios sobre el metabolismo, la inmunidad y la fisiología del sistema nervioso fueron fundamentales para el desarrollo de la medicina moderna. La institución también sirvió como un espacio para la formación de jóvenes investigadores, quienes encontraron en Pi-Suñer a un mentor dispuesto a compartir su conocimiento y experiencia.</p>
+                    </div>
+                    <div class="biography-image">
+                        <img src="images/instituto-fisiologia.jpg" alt="Instituto de Fisiología">
+                    </div>
+                </div>
 
-                <h4>Actividad Política y Compromiso con Cataluña</h4>
-                <p>Paralelamente a su trabajo científico, Augusto Pi-Suñer también tuvo una intensa participación en la vida política y social de Cataluña. Era un firme defensor de los derechos de la región y de la importancia de la autonomía. En 1916, se unió a la Unió Federal Nacionalista Republicana, un partido político que abogaba por el autogobierno de Cataluña dentro de una república española. Su compromiso con estos ideales lo llevó a ser elegido diputado por Figueres entre 1916 y 1923, donde defendió activamente la autonomía universitaria y la necesidad de modernizar la educación y la investigación en España.</p>
-                <p>Su participación en la política se extendió también a su trabajo académico. Augusto Pi-Suñer fue uno de los promotores del Estatuto de la Universidad Autónoma de Barcelona, defendiendo la independencia académica frente a las autoridades gubernamentales. Creía que la universidad debía ser un espacio libre de interferencias políticas, donde la ciencia y el conocimiento pudieran desarrollarse sin restricciones. Su papel en la defensa de la autonomía universitaria fue crucial para establecer una base sólida de libertad académica en la región.</p>
-                <p>Además de su trabajo en la universidad y su actividad política, Pi-Suñer fue presidente del Consejo de Cultura de la Generalitat de Cataluña y participó en diversos congresos científicos y académicos en Europa. Fue un hombre profundamente comprometido con la cultura catalana, y una de sus metas fue promover el uso del catalán como lengua científica. Esta visión lo llevó a fundar la Sociedad Catalana de Biología en 1912, y a dirigir la revista "Treballs de la Societat de Biologia", donde publicó gran parte de sus investigaciones. Su compromiso con el desarrollo de la ciencia en lengua catalana fue un elemento esencial de su legado, y su influencia se extendió más allá del ámbito científico, al campo cultural y educativo.</p>
+                <!-- Actividad Política y Compromiso con Cataluña -->
+                <div class="biography-section">
+                    <div class="biography-text">
+                        <h4>Actividad Política y Compromiso con Cataluña</h4>
+                        <p>Paralelamente a su trabajo científico, Augusto Pi-Suñer también tuvo una intensa participación en la vida política y social de Cataluña. Era un firme defensor de los derechos de la región y de la importancia de la autonomía. En 1916, se unió a la Unió Federal Nacionalista Republicana, un partido político que abogaba por el autogobierno de Cataluña dentro de una república española. Su compromiso con estos ideales lo llevó a ser elegido diputado por Figueres entre 1916 y 1923, donde defendió activamente la autonomía universitaria y la necesidad de modernizar la educación y la investigación en España.</p>
+                        <p>Su participación en la política se extendió también a su trabajo académico. Augusto Pi-Suñer fue uno de los promotores del Estatuto de la Universidad Autónoma de Barcelona, defendiendo la independencia académica frente a las autoridades gubernamentales. Creía que la universidad debía ser un espacio libre de interferencias políticas, donde la ciencia y el conocimiento pudieran desarrollarse sin restricciones. Su papel en la defensa de la autonomía universitaria fue crucial para establecer una base sólida de libertad académica en la región.</p>
+                        <p>Además de su trabajo en la universidad y su actividad política, Pi-Suñer fue presidente del Consejo de Cultura de la Generalitat de Cataluña y participó en diversos congresos científicos y académicos en Europa. Fue un hombre profundamente comprometido con la cultura catalana, y una de sus metas fue promover el uso del catalán como lengua científica. Esta visión lo llevó a fundar la Sociedad Catalana de Biología en 1912, y a dirigir la revista "Treballs de la Societat de Biologia", donde publicó gran parte de sus investigaciones. Su compromiso con el desarrollo de la ciencia en lengua catalana fue un elemento esencial de su legado, y su influencia se extendió más allá del ámbito científico, al campo cultural y educativo.</p>
+                    </div>
+                    <div class="biography-image">
+                        <img src="images/actividad-politica-augusto-pi-sunyer.jpg" alt="Actividad Política de Augusto Pi-Suñer">
+                    </div>
+                </div>
 
-                <h4>Investigación y Aportaciones Científicas</h4>
-                <p>En el ámbito científico, las contribuciones de Augusto Pi-Suñer fueron numerosas y significativas. Sus investigaciones sobre el metabolismo y la fisiología del sistema nervioso central fueron fundamentales para la comprensión de los procesos fisiológicos en el cuerpo humano. Uno de sus principales intereses fue el estudio de los reflejos y la regulación de las funciones corporales, temas que exploró mediante el uso de modelos experimentales avanzados para la época.</p>
-                <p>Pi-Suñer fue pionero en el estudio de la regulación refleja de los movimientos respiratorios y en la identificación de los quimiorreceptores periféricos que influyen en el ritmo respiratorio. Estos estudios fueron realizados en estrecha colaboración con otros científicos de renombre como Jesús M. Bellido Golferichs y José Puche Álvarez, quienes más tarde serían reconocidos como figuras importantes en el campo de la fisiología. Bajo su liderazgo, el Instituto de Fisiología desarrolló estudios sobre el metabolismo de los glúcidos, la bioquímica del hígado y la fisiología renal, temas que marcarían el rumbo de la investigación biomédica en las décadas siguientes.</p>
-                <p>Sus aportaciones no se limitaron a la fisiología, sino que también influyeron en el desarrollo de la psicología experimental en Cataluña. Pi-Suñer mantuvo una estrecha colaboración con Emilio Mira y López, uno de los padres de la psicología aplicada en España, y juntos impulsaron la creación de una escuela de psicofisiología que combinaba el estudio de la mente y el cuerpo a través de métodos experimentales rigurosos. La colaboración entre ambos permitió el desarrollo de una psicología científica en Cataluña que se mantendría durante varias décadas y que establecería bases sólidas para la investigación psicológica en el país.</p>
+                <!-- Investigación y Aportaciones Científicas -->
+                <div class="biography-section">
+                    <div class="biography-text">
+                        <h4>Investigación y Aportaciones Científicas</h4>
+                        <p>En el ámbito científico, las contribuciones de Augusto Pi-Suñer fueron numerosas y significativas. Sus investigaciones sobre el metabolismo y la fisiología del sistema nervioso central fueron fundamentales para la comprensión de los procesos fisiológicos en el cuerpo humano. Uno de sus principales intereses fue el estudio de los reflejos y la regulación de las funciones corporales, temas que exploró mediante el uso de modelos experimentales avanzados para la época.</p>
+                        <p>Pi-Suñer fue pionero en el estudio de la regulación refleja de los movimientos respiratorios y en la identificación de los quimiorreceptores periféricos que influyen en el ritmo respiratorio. Estos estudios fueron realizados en estrecha colaboración con otros científicos de renombre como Jesús M. Bellido Golferichs y José Puche Álvarez, quienes más tarde serían reconocidos como figuras importantes en el campo de la fisiología. Bajo su liderazgo, el Instituto de Fisiología desarrolló estudios sobre el metabolismo de los glúcidos, la bioquímica del hígado y la fisiología renal, temas que marcarían el rumbo de la investigación biomédica en las décadas siguientes.</p>
+                        <p>Sus aportaciones no se limitaron a la fisiología, sino que también influyeron en el desarrollo de la psicología experimental en Cataluña. Pi-Suñer mantuvo una estrecha colaboración con Emilio Mira y López, uno de los padres de la psicología aplicada en España, y juntos impulsaron la creación de una escuela de psicofisiología que combinaba el estudio de la mente y el cuerpo a través de métodos experimentales rigurosos. La colaboración entre ambos permitió el desarrollo de una psicología científica en Cataluña que se mantendría durante varias décadas y que establecería bases sólidas para la investigación psicológica en el país.</p>
+                    </div>
+                    <div class="biography-image">
+                        <img src="images/investigacion-augusto-pi-sunyer.jpg" alt="Investigación de Augusto Pi-Suñer">
+                    </div>
+                </div>
 
-                <h4>Vida Personal y Legado</h4>
-                <p>A nivel personal, Augusto Pi-Suñer era conocido por su carácter afable y su capacidad para inspirar a quienes lo rodeaban. Se casó con Carmen Bayo, con quien tuvo tres hijos: Jaime, César, y Pedro. La familia siempre fue un pilar fundamental para él, y a pesar de sus múltiples responsabilidades académicas y políticas, Pi-Suñer se esforzó por mantener un equilibrio entre su vida personal y su carrera profesional. Sus hijos también siguieron carreras destacadas, contribuyendo al legado de una familia dedicada al conocimiento y al servicio a la sociedad.</p>
-                <p>Con el advenimiento de la dictadura de Primo de Rivera en 1923, Pi-Suñer y otros científicos comprometidos con los valores republicanos y democráticos enfrentaron tiempos difíciles. La represión política afectó a muchas de las instituciones que había ayudado a construir, incluyendo el Instituto de Fisiología, que sufrió restricciones y limitaciones en su actividad. Sin embargo, Augusto nunca abandonó sus ideales y continuó trabajando desde el ámbito académico y científico para preservar la libertad de pensamiento y la investigación en Cataluña.</p>
+                <!-- Vida Personal y Legado -->
+                <div class="biography-section">
+                    <div class="biography-text">
+                        <h4>Vida Personal y Legado</h4>
+                        <p>A nivel personal, Augusto Pi-Suñer era conocido por su carácter afable y su capacidad para inspirar a quienes lo rodeaban. Se casó con Carmen Bayo, con quien tuvo tres hijos: Jaime, César, y Pedro. La familia siempre fue un pilar fundamental para él, y a pesar de sus múltiples responsabilidades académicas y políticas, Pi-Suñer se esforzó por mantener un equilibrio entre su vida personal y su carrera profesional. Sus hijos también siguieron carreras destacadas, contribuyendo al legado de una familia dedicada al conocimiento y al servicio a la sociedad.</p>
+                        <p>Con el advenimiento de la dictadura de Primo de Rivera en 1923, Pi-Suñer y otros científicos comprometidos con los valores republicanos y democráticos enfrentaron tiempos difíciles. La represión política afectó a muchas de las instituciones que había ayudado a construir, incluyendo el Instituto de Fisiología, que sufrió restricciones y limitaciones en su actividad. Sin embargo, Augusto nunca abandonó sus ideales y continuó trabajando desde el ámbito académico y científico para preservar la libertad de pensamiento y la investigación en Cataluña.</p>
+                    </div>
+                    <div class="biography-image">
+                        <img src="images/vida-personal-augusto-pi-sunyer.jpg" alt="Vida Personal de Augusto Pi-Suñer">
+                    </div>
+                </div>
 
-                <h4>Camino hacia la Segunda República</h4>
-                <p>Durante los últimos años de la dictadura de Primo de Rivera, Augusto Pi-Suñer participó activamente en los movimientos que abogaban por la restauración de las libertades democráticas en España. Sus actividades políticas y su compromiso con la autonomía de Cataluña lo llevaron a colaborar con diversos grupos republicanos, y su influencia en la comunidad científica y académica fue un factor importante para mantener viva la llama del republicanismo en esos años oscuros. En 1930, con la caída de Primo de Rivera, Pi-Suñer se unió a los esfuerzos para preparar el camino hacia la instauración de la Segunda República Española, que finalmente se proclamó en 1931.</p>
-                <p>Su vida entre 1900 y 1931 estuvo marcada por una dedicación incansable a la ciencia, la enseñanza y el compromiso político y cultural con Cataluña. Augusto Pi-Suñer se destacó como un científico pionero, un docente entregado y un defensor de los derechos de su región. Su legado en este período fue fundamental para el desarrollo de la investigación biomédica en España, y su influencia se extendió mucho más allá del ámbito académico, dejando una huella imborrable en la historia de Cataluña y del país en su conjunto.</p>
+                <!-- Camino hacia la Segunda República -->
+                <div class="biography-section">
+                    <div class="biography-text">
+                        <h4>Camino hacia la Segunda República</h4>
+                        <p>Durante los últimos años de la dictadura de Primo de Rivera, Augusto Pi-Suñer participó activamente en los movimientos que abogaban por la restauración de las libertades democráticas en España. Sus actividades políticas y su compromiso con la autonomía de Cataluña lo llevaron a colaborar con diversos grupos republicanos, y su influencia en la comunidad científica y académica fue un factor importante para mantener viva la llama del republicanismo en esos años oscuros. En 1930, con la caída de Primo de Rivera, Pi-Suñer se unió a los esfuerzos para preparar el camino hacia la instauración de la Segunda República Española, que finalmente se proclamó en 1931.</p>
+                        <p>Su vida entre 1900 y 1931 estuvo marcada por una dedicación incansable a la ciencia, la enseñanza y el compromiso político y cultural con Cataluña. Augusto Pi-Suñer se destacó como un científico pionero, un docente entregado y un defensor de los derechos de su región. Su legado en este período fue fundamental para el desarrollo de la investigación biomédica en España, y su influencia se extendió mucho más allá del ámbito académico, dejando una huella imborrable en la historia de Cataluña y del país en su conjunto.</p>
+                    </div>
+                    <div class="biography-image">
+                        <img src="images/camino-segunda-republica.jpg" alt="Camino hacia la Segunda República">
+                    </div>
+                </div>
 
-                <h3>República española</h3>
+                <!-- República Española -->
+                <div class="biography-section">
+                    <div class="biography-text">
+                        <h3>República Española</h3>
 
-                <h4>Reformas en la Educación y la Universidad Autónoma de Barcelona</h4>
-                <p>Durante la Segunda República, una de las grandes aspiraciones de Augusto Pi-Suñer fue la reforma del sistema educativo, especialmente en el ámbito universitario. En 1931, fue uno de los impulsores de la Universidad Autónoma de Barcelona, un proyecto ambicioso que tenía como objetivo dotar a Cataluña de una universidad con plena autonomía académica, administrativa y financiera. La creación de la Universidad Autónoma fue un reflejo de la voluntad de Pi-Suñer de liberar a la educación de la influencia del Estado central y permitir que la ciencia y el conocimiento se desarrollaran sin restricciones políticas.</p>
-                <p>Pi-Suñer, como catedrático de fisiología y uno de los principales promotores del proyecto, desempeñó un papel crucial en la estructuración de la nueva universidad. Estaba convencido de que la autonomía universitaria era esencial para el avance de la ciencia, y trabajó incansablemente para crear un ambiente de libertad académica que fomentara la investigación y la excelencia educativa. La Universidad Autónoma de Barcelona se convirtió en un símbolo del nuevo espíritu republicano, que buscaba modernizar la educación y hacerla accesible a todos los ciudadanos.</p>
+                        <h4>Reformas en la Educación y la Universidad Autónoma de Barcelona</h4>
+                        <p>Durante la Segunda República, una de las grandes aspiraciones de Augusto Pi-Suñer fue la reforma del sistema educativo, especialmente en el ámbito universitario. En 1931, fue uno de los impulsores de la Universidad Autónoma de Barcelona, un proyecto ambicioso que tenía como objetivo dotar a Cataluña de una universidad con plena autonomía académica, administrativa y financiera. La creación de la Universidad Autónoma fue un reflejo de la voluntad de Pi-Suñer de liberar a la educación de la influencia del Estado central y permitir que la ciencia y el conocimiento se desarrollaran sin restricciones políticas.</p>
+                        <p>Pi-Suñer, como catedrático de fisiología y uno de los principales promotores del proyecto, desempeñó un papel crucial en la estructuración de la nueva universidad. Estaba convencido de que la autonomía universitaria era esencial para el avance de la ciencia, y trabajó incansablemente para crear un ambiente de libertad académica que fomentara la investigación y la excelencia educativa. La Universidad Autónoma de Barcelona se convirtió en un símbolo del nuevo espíritu republicano, que buscaba modernizar la educación y hacerla accesible a todos los ciudadanos.</p>
 
-                <h4>Liderazgo en la Comunidad Científica</h4>
-                <p>Durante los años de la Segunda República, Augusto Pi-Suñer continuó con su labor científica al frente del Instituto de Fisiología, el cual había fundado en 1920. Bajo su liderazgo, el Instituto se consolidó como un centro de referencia para la investigación biomédica no solo en Cataluña, sino en toda España y más allá. Pi-Suñer aprovechó el clima de libertad y optimismo que trajo consigo la República para promover la investigación científica y atraer a jóvenes talentos a su laboratorio.</p>
-                <p>El Instituto de Fisiología se mantuvo como un lugar de innovación y excelencia, donde se llevaban a cabo investigaciones pioneras en fisiología, bioquímica y medicina experimental. Pi-Suñer también fue un activo participante en congresos internacionales, donde presentaba sus descubrimientos y se mantenía en contacto con otros científicos de renombre. Durante este período, el Instituto de Fisiología se convirtió en un ejemplo del potencial que la ciencia española podía alcanzar bajo un gobierno que valorara y apoyara la investigación y la educación.</p>
+                        <h4>Liderazgo en la Comunidad Científica</h4>
+                        <p>Durante los años de la Segunda República, Augusto Pi-Suñer continuó con su labor científica al frente del Instituto de Fisiología, el cual había fundado en 1920. Bajo su liderazgo, el Instituto se consolidó como un centro de referencia para la investigación biomédica no solo en Cataluña, sino en toda España y más allá. Pi-Suñer aprovechó el clima de libertad y optimismo que trajo consigo la República para promover la investigación científica y atraer a jóvenes talentos a su laboratorio.</p>
+                        <p>El Instituto de Fisiología se mantuvo como un lugar de innovación y excelencia, donde se llevaban a cabo investigaciones pioneras en fisiología, bioquímica y medicina experimental. Pi-Suñer también fue un activo participante en congresos internacionales, donde presentaba sus descubrimientos y se mantenía en contacto con otros científicos de renombre. Durante este período, el Instituto de Fisiología se convirtió en un ejemplo del potencial que la ciencia española podía alcanzar bajo un gobierno que valorara y apoyara la investigación y la educación.</p>
 
-                <h4>Compromiso Político y Social</h4>
-                <p>Augusto Pi-Suñer no solo se dedicó a la ciencia y la educación durante la Segunda República, sino que también participó activamente en la vida política y social de Cataluña. Era un firme defensor de los derechos autonómicos y trabajó junto a otras figuras destacadas para asegurar que Cataluña tuviera un papel importante en la nueva España republicana. En este sentido, fue miembro del Consejo de Cultura de la Generalitat de Cataluña, donde abogó por la promoción de la cultura y la ciencia en catalán.</p>
-                <p>Además, Pi-Suñer fue elegido miembro del Patronato de la Universidad de Barcelona y participó activamente en el diseño y la implementación de políticas educativas que buscaran modernizar la enseñanza y hacerla más inclusiva. Creía firmemente en el papel de la educación como herramienta para el progreso social y trabajó para garantizar que la educación superior fuera accesible para todos, independientemente de su clase social o condición económica.</p>
+                        <h4>Compromiso Político y Social</h4>
+                        <p>Augusto Pi-Suñer no solo se dedicó a la ciencia y la educación durante la Segunda República, sino que también participó activamente en la vida política y social de Cataluña. Era un firme defensor de los derechos autonómicos y trabajó junto a otras figuras destacadas para asegurar que Cataluña tuviera un papel importante en la nueva España republicana. En este sentido, fue miembro del Consejo de Cultura de la Generalitat de Cataluña, donde abogó por la promoción de la cultura y la ciencia en catalán.</p>
+                        <p>Además, Pi-Suñer fue elegido miembro del Patronato de la Universidad de Barcelona y participó activamente en el diseño y la implementación de políticas educativas que buscaran modernizar la enseñanza y hacerla más inclusiva. Creía firmemente en el papel de la educación como herramienta para el progreso social y trabajó para garantizar que la educación superior fuera accesible para todos, independientemente de su clase social o condición económica.</p>
 
-                <h4>La Sociedad Catalana de Biología y el Compromiso con la Ciencia en Catalán</h4>
-                <p>Augusto Pi-Suñer también fue un promotor incansable del uso del catalán en el ámbito científico. Durante la República, la Sociedad Catalana de Biología, fundada por él en 1912, jugó un papel fundamental en la difusión de la ciencia en catalán. Pi-Suñer dirigió la revista "Treballs de la Societat de Biologia", donde se publicaron numerosos estudios e investigaciones realizadas en Cataluña. Para Pi-Suñer, la lengua era una parte esencial de la identidad cultural y científica de la región, y trabajó para que el catalán se consolidara como una lengua válida para la comunicación científica a nivel internacional.</p>
-                <p>Su compromiso con la ciencia en catalán también se manifestó en su labor docente. En la Universidad Autónoma de Barcelona, Pi-Suñer impartía sus clases en catalán, promoviendo así el uso de la lengua en el ámbito académico. Para él, la ciencia y la cultura no podían separarse, y el desarrollo de la ciencia en Cataluña debía ir de la mano con la afirmación de su identidad cultural. Esta visión lo llevó a ser una figura destacada en el movimiento para la normalización del catalán durante la Segunda República.</p>
+                        <h4>La Sociedad Catalana de Biología y el Compromiso con la Ciencia en Catalán</h4>
+                        <p>Augusto Pi-Suñer también fue un promotor incansable del uso del catalán en el ámbito científico. Durante la República, la Sociedad Catalana de Biología, fundada por él en 1912, jugó un papel fundamental en la difusión de la ciencia en catalán. Pi-Suñer dirigió la revista "Treballs de la Societat de Biologia", donde se publicaron numerosos estudios e investigaciones realizadas en Cataluña. Para Pi-Suñer, la lengua era una parte esencial de la identidad cultural y científica de la región, y trabajó para que el catalán se consolidara como una lengua válida para la comunicación científica a nivel internacional.</p>
+                        <p>Su compromiso con la ciencia en catalán también se manifestó en su labor docente. En la Universidad Autónoma de Barcelona, Pi-Suñer impartía sus clases en catalán, promoviendo así el uso de la lengua en el ámbito académico. Para él, la ciencia y la cultura no podían separarse, y el desarrollo de la ciencia en Cataluña debía ir de la mano con la afirmación de su identidad cultural. Esta visión lo llevó a ser una figura destacada en el movimiento para la normalización del catalán durante la Segunda República.</p>
 
-                <h4>La Investigación Científica en Tiempos de Cambio</h4>
-                <p>Los años de la Segunda República fueron también un período de gran productividad científica para Augusto Pi-Suñer. Durante este tiempo, continuó sus investigaciones sobre la fisiología del sistema nervioso, el metabolismo y la regulación de las funciones corporales. Uno de sus intereses principales seguía siendo el estudio de los reflejos y la regulación del cuerpo mediante el sistema nervioso autónomo. Estos estudios fueron esenciales para la comprensión de cómo el cuerpo humano responde a los estímulos externos e internos, y aportaron conocimientos fundamentales a la fisiología moderna.</p>
-                <p>Pi-Suñer también colaboró con otros científicos europeos, aprovechando el ambiente de apertura que existía durante la República. Estableció conexiones con instituciones científicas de Francia, Alemania y el Reino Unido, y participó en proyectos conjuntos que buscaban avanzar en el conocimiento de la fisiología y la medicina. Estas colaboraciones internacionales fueron un reflejo de su visión de la ciencia como un esfuerzo colectivo y global, y ayudaron a situar a la investigación catalana en el panorama científico internacional.</p>
+                        <h4>La Investigación Científica en Tiempos de Cambio</h4>
+                        <p>Los años de la Segunda República fueron también un período de gran productividad científica para Augusto Pi-Suñer. Durante este tiempo, continuó sus investigaciones sobre la fisiología del sistema nervioso, el metabolismo y la regulación de las funciones corporales. Uno de sus intereses principales seguía siendo el estudio de los reflejos y la regulación del cuerpo mediante el sistema nervioso autónomo. Estos estudios fueron esenciales para la comprensión de cómo el cuerpo humano responde a los estímulos externos e internos, y aportaron conocimientos fundamentales a la fisiología moderna.</p>
+                        <p>Pi-Suñer también colaboró con otros científicos europeos, aprovechando el ambiente de apertura que existía durante la República. Estableció conexiones con instituciones científicas de Francia, Alemania y el Reino Unido, y participó en proyectos conjuntos que buscaban avanzar en el conocimiento de la fisiología y la medicina. Estas colaboraciones internacionales fueron un reflejo de su visión de la ciencia como un esfuerzo colectivo y global, y ayudaron a situar a la investigación catalana en el panorama científico internacional.</p>
+                    </div>
+                    <div class="biography-image">
+                        <img src="images/republica-espanola-augusto-pi-sunyer.jpg" alt="República Española y Augusto Pi-Suñer">
+                    </div>
+                </div>
 
-                <h4>Los Retos Políticos y el Camino al Exilio</h4>
-                <p>A pesar de los avances logrados durante la Segunda República, el ambiente político en España comenzó a deteriorarse hacia finales de la década de 1930. La creciente polarización y la inestabilidad llevaron a un ambiente cada vez más difícil para los académicos e intelectuales comprometidos con la causa republicana. Augusto Pi-Suñer, al ser un defensor del progreso, la autonomía y la libertad, se encontró en una situación complicada con el estallido de la Guerra Civil en 1936.</p>
-                <p>Durante los primeros meses del conflicto, Pi-Suñer intentó mantener el funcionamiento del Instituto de Fisiología y de la Universidad Autónoma de Barcelona. Sin embargo, la guerra tuvo un impacto devastador en la comunidad científica. Las instituciones académicas fueron desmanteladas, muchos investigadores se vieron forzados a abandonar sus proyectos, y la represión política se convirtió en una realidad cotidiana. A pesar de todo, Pi-Suñer se mantuvo en Cataluña durante la mayor parte del conflicto, intentando proteger a sus colegas y preservar el conocimiento científico.</p>
-                <p>Finalmente, con la caída de Barcelona en 1939 y el triunfo de las fuerzas franquistas, Augusto Pi-Suñer se vio obligado a exiliarse. La represión que se avecinaba contra todos aquellos que habían defendido la República y la autonomía de Cataluña no le dejaba otra opción. Ese mismo año, se exilió a Francia y posteriormente a Venezuela, donde continuaría su labor científica, fundando el Instituto de Medicina Experimental en Caracas y estableciendo una escuela de fisiología que seguiría los pasos del Instituto de Fisiología de Barcelona.</p>
+                <!-- Los Retos Políticos y el Camino al Exilio -->
+                <div class="biography-section">
+                    <div class="biography-text">
+                        <h4>Los Retos Políticos y el Camino al Exilio</h4>
+                        <p>A pesar de los avances logrados durante la Segunda República, el ambiente político en España comenzó a deteriorarse hacia finales de la década de 1930. La creciente polarización y la inestabilidad llevaron a un ambiente cada vez más difícil para los académicos e intelectuales comprometidos con la causa republicana. Augusto Pi-Suñer, al ser un defensor del progreso, la autonomía y la libertad, se encontró en una situación complicada con el estallido de la Guerra Civil en 1936.</p>
+                        <p>Durante los primeros meses del conflicto, Pi-Suñer intentó mantener el funcionamiento del Instituto de Fisiología y de la Universidad Autónoma de Barcelona. Sin embargo, la guerra tuvo un impacto devastador en la comunidad científica. Las instituciones académicas fueron desmanteladas, muchos investigadores se vieron forzados a abandonar sus proyectos, y la represión política se convirtió en una realidad cotidiana. A pesar de todo, Pi-Suñer se mantuvo en Cataluña durante la mayor parte del conflicto, intentando proteger a sus colegas y preservar el conocimiento científico.</p>
+                        <p>Finalmente, con la caída de Barcelona en 1939 y el triunfo de las fuerzas franquistas, Augusto Pi-Suñer se vio obligado a exiliarse. La represión que se avecinaba contra todos aquellos que habían defendido la República y la autonomía de Cataluña no le dejaba otra opción. Ese mismo año, se exilió a Francia y posteriormente a Venezuela, donde continuaría su labor científica, fundando el Instituto de Medicina Experimental en Caracas y estableciendo una escuela de fisiología que seguiría los pasos del Instituto de Fisiología de Barcelona.</p>
+                    </div>
+                    <div class="biography-image">
+                        <img src="images/exilio-augusto-pi-sunyer.jpg" alt="Exilio de Augusto Pi-Suñer">
+                    </div>
+                </div>
 
-                <h3>Exilio</h3>
+                <!-- Exilio -->
+                <div class="biography-section">
+                    <div class="biography-text">
+                        <h3>Exilio</h3>
 
-                <h4>Primeros Años de Exilio en Francia</h4>
-                <p>Augusto Pi-Suñer se trasladó inicialmente a Francia, como muchos otros republicanos que huían de la represión franquista. En Francia, fue recibido por la comunidad científica y rápidamente se unió al esfuerzo de sus colegas en el exilio por continuar con sus investigaciones y mantener viva la llama del conocimiento científico. Sin embargo, su estancia en Francia fue complicada debido a las tensiones políticas y al inicio de la Segunda Guerra Mundial. La situación se volvió aún más precaria cuando las tropas nazis ocuparon Francia, lo que obligó a muchos exiliados a buscar refugio en otros países más seguros.</p>
-                <p>Durante su tiempo en Francia, Pi-Suñer colaboró con varios científicos franceses, manteniendo su compromiso con la investigación y la divulgación del conocimiento. A pesar de las dificultades materiales y emocionales, siguió trabajando en proyectos relacionados con la fisiología, aprovechando las redes de contactos internacionales que había establecido durante su carrera. Sin embargo, la situación política y la amenaza creciente del fascismo en Europa hicieron que Pi-Suñer decidiera buscar una nueva oportunidad en el continente americano, donde podría continuar su labor sin las limitaciones impuestas por la guerra.</p>
+                        <h4>Primeros Años de Exilio en Francia</h4>
+                        <p>Augusto Pi-Suñer se trasladó inicialmente a Francia, como muchos otros republicanos que huían de la represión franquista. En Francia, fue recibido por la comunidad científica y rápidamente se unió al esfuerzo de sus colegas en el exilio por continuar con sus investigaciones y mantener viva la llama del conocimiento científico. Sin embargo, su estancia en Francia fue complicada debido a las tensiones políticas y al inicio de la Segunda Guerra Mundial. La situación se volvió aún más precaria cuando las tropas nazis ocuparon Francia, lo que obligó a muchos exiliados a buscar refugio en otros países más seguros.</p>
+                        <p>Durante su tiempo en Francia, Pi-Suñer colaboró con varios científicos franceses, manteniendo su compromiso con la investigación y la divulgación del conocimiento. A pesar de las dificultades materiales y emocionales, siguió trabajando en proyectos relacionados con la fisiología, aprovechando las redes de contactos internacionales que había establecido durante su carrera. Sin embargo, la situación política y la amenaza creciente del fascismo en Europa hicieron que Pi-Suñer decidiera buscar una nueva oportunidad en el continente americano, donde podría continuar su labor sin las limitaciones impuestas por la guerra.</p>
 
-                <h4>Exilio en Venezuela y Fundación del Instituto de Medicina Experimental</h4>
-                <p>En 1939, Augusto Pi-Suñer se trasladó a Venezuela, invitado por el gobierno venezolano, que estaba interesado en aprovechar su vasta experiencia y conocimientos para desarrollar la ciencia y la educación en el país. Venezuela, bajo el liderazgo del presidente Eleazar López Contreras y con el apoyo del ministro de Educación Enrique Tejera, ofreció un espacio seguro y propicio para el desarrollo científico, lo cual fue un alivio para Pi-Suñer y su familia. Este nuevo entorno le permitió comenzar una nueva etapa de su vida, dedicada nuevamente a la docencia y a la investigación científica.</p>
-                <p>En 1940, Pi-Suñer fundó el Instituto de Medicina Experimental en Caracas, una institución que se convertiría en un centro fundamental para la formación de nuevos médicos e investigadores en Venezuela. Inspirado en el Instituto de Fisiología que había creado en Barcelona, el Instituto de Medicina Experimental en Caracas siguió el mismo modelo de investigación interdisciplinaria y de formación rigurosa. Pi-Suñer asumió la dirección del instituto y trabajó incansablemente para dotarlo de los recursos necesarios, desde equipamiento hasta una biblioteca adecuada para el desarrollo de la investigación biomédica.</p>
-                <p>El Instituto de Medicina Experimental se estableció inicialmente en una modesta casona en Caracas, cerca del Hospital Vargas. A pesar de las limitaciones materiales, el instituto rápidamente se convirtió en un referente para la investigación médica en Venezuela. Augusto Pi-Suñer se encargó de formar un equipo de jóvenes científicos y médicos interesados en la investigación biomédica, y bajo su liderazgo, el instituto desarrolló proyectos pioneros en fisiología, bioquímica y farmacología. Muchos de los estudiantes formados por Pi-Suñer en el instituto más tarde se convirtieron en figuras destacadas de la medicina venezolana, asegurando así un legado duradero para su trabajo.</p>
+                        <h4>Exilio en Venezuela y Fundación del Instituto de Medicina Experimental</h4>
+                        <p>En 1939, Augusto Pi-Suñer se trasladó a Venezuela, invitado por el gobierno venezolano, que estaba interesado en aprovechar su vasta experiencia y conocimientos para desarrollar la ciencia y la educación en el país. Venezuela, bajo el liderazgo del presidente Eleazar López Contreras y con el apoyo del ministro de Educación Enrique Tejera, ofreció un espacio seguro y propicio para el desarrollo científico, lo cual fue un alivio para Pi-Suñer y su familia. Este nuevo entorno le permitió comenzar una nueva etapa de su vida, dedicada nuevamente a la docencia y a la investigación científica.</p>
+                        <p>En 1940, Pi-Suñer fundó el Instituto de Medicina Experimental en Caracas, una institución que se convertiría en un centro fundamental para la formación de nuevos médicos e investigadores en Venezuela. Inspirado en el Instituto de Fisiología que había creado en Barcelona, el Instituto de Medicina Experimental en Caracas siguió el mismo modelo de investigación interdisciplinaria y de formación rigurosa. Pi-Suñer asumió la dirección del instituto y trabajó incansablemente para dotarlo de los recursos necesarios, desde equipamiento hasta una biblioteca adecuada para el desarrollo de la investigación biomédica.</p>
+                        <p>El Instituto de Medicina Experimental se estableció inicialmente en una modesta casona en Caracas, cerca del Hospital Vargas. A pesar de las limitaciones materiales, el instituto rápidamente se convirtió en un referente para la investigación médica en Venezuela. Augusto Pi-Suñer se encargó de formar un equipo de jóvenes científicos y médicos interesados en la investigación biomédica, y bajo su liderazgo, el instituto desarrolló proyectos pioneros en fisiología, bioquímica y farmacología. Muchos de los estudiantes formados por Pi-Suñer en el instituto más tarde se convirtieron en figuras destacadas de la medicina venezolana, asegurando así un legado duradero para su trabajo.</p>
+                    </div>
+                    <div class="biography-image">
+                        <img src="images/exilio-venezuela-augusto-pi-sunyer.jpg" alt="Exilio en Venezuela de Augusto Pi-Suñer">
+                    </div>
+                </div>
 
-                <h4>Contribuciones a la Ciencia y la Educación en el Exilio</h4>
-                <p>Durante sus años en Venezuela, Augusto Pi-Suñer continuó trabajando en temas que habían sido centrales en su carrera: la fisiología del sistema nervioso, el metabolismo y la regulación de las funciones corporales. Su enfoque multidisciplinario y su experiencia en investigación experimental lo hicieron destacar rápidamente en el ámbito académico venezolano. Además de dirigir el Instituto de Medicina Experimental, Pi-Suñer también impartió clases en la Universidad Central de Venezuela, donde transformó la enseñanza de la fisiología y la bioquímica, actualizando los programas académicos y promoviendo un enfoque más experimental y riguroso.</p>
-                <p>Su contribución no solo se limitó al ámbito académico y científico. Pi-Suñer también fue un miembro activo de la comunidad de exiliados republicanos en Venezuela. Colaboró estrechamente con otros intelectuales y científicos que habían huido de España, y juntos intentaron recrear un ambiente cultural y científico similar al que habían conocido en su tierra natal. Fue presidente del Centro Catalán de Caracas, una institución fundada en 1945 que se convirtió en un punto de encuentro para los catalanes en el exilio, y participó en la organización de eventos culturales y científicos que buscaban mantener viva la identidad catalana en el extranjero.</p>
+                <!-- Contribuciones a la Ciencia y la Educación en el Exilio -->
+                <div class="biography-section">
+                    <div class="biography-text">
+                        <h4>Contribuciones a la Ciencia y la Educación en el Exilio</h4>
+                        <p>Durante sus años en Venezuela, Augusto Pi-Suñer continuó trabajando en temas que habían sido centrales en su carrera: la fisiología del sistema nervioso, el metabolismo y la regulación de las funciones corporales. Su enfoque multidisciplinario y su experiencia en investigación experimental lo hicieron destacar rápidamente en el ámbito académico venezolano. Además de dirigir el Instituto de Medicina Experimental, Pi-Suñer también impartió clases en la Universidad Central de Venezuela, donde transformó la enseñanza de la fisiología y la bioquímica, actualizando los programas académicos y promoviendo un enfoque más experimental y riguroso.</p>
+                        <p>Su contribución no solo se limitó al ámbito académico y científico. Pi-Suñer también fue un miembro activo de la comunidad de exiliados republicanos en Venezuela. Colaboró estrechamente con otros intelectuales y científicos que habían huido de España, y juntos intentaron recrear un ambiente cultural y científico similar al que habían conocido en su tierra natal. Fue presidente del Centro Catalán de Caracas, una institución fundada en 1945 que se convirtió en un punto de encuentro para los catalanes en el exilio, y participó en la organización de eventos culturales y científicos que buscaban mantener viva la identidad catalana en el extranjero.</p>
+                    </div>
+                    <div class="biography-image">
+                        <img src="images/contribuciones-exilio-augusto-pi-sunyer.jpg" alt="Contribuciones en el Exilio de Augusto Pi-Suñer">
+                    </div>
+                </div>
 
-                <h4>Reconocimientos y Honores en el Exilio</h4>
-                <p>En 1956, Augusto Pi-Suñer recibió el Premio Kalinga otorgado por la UNESCO, un reconocimiento internacional a su labor de divulgación científica. Este galardón, que anteriormente había sido otorgado a figuras como Bertrand Russell y Julian Huxley, reflejaba la importancia de su contribución al conocimiento científico y su impacto en la educación en América Latina y más allá.</p>
-                <p>El trabajo de Augusto Pi-Suñer en Venezuela no pasó desapercibido. En 1954, fue objeto de un homenaje en México, donde fue reconocido por sus contribuciones a la ciencia y la educación en América Latina. Además, en 1962, el presidente de Venezuela, Rómulo Betancourt, le otorgó la Orden Francisco de Miranda, una de las más altas distinciones del país, en reconocimiento a su labor como científico y educador. Betancourt se refirió a Pi-Suñer como un hombre que no solo había sembrado el conocimiento científico en Venezuela, sino también los valores de la civilidad y la justicia, lo cual reflejaba el profundo respeto que el científico catalán había ganado entre sus colegas y estudiantes venezolanos.</p>
-                <p>Pi-Suñer también fue miembro de varias sociedades científicas y académicas en Venezuela y fue invitado a participar en numerosos congresos y eventos internacionales. A pesar de estar lejos de su tierra natal, logró mantener una activa vida académica y científica, y se convirtió en una figura clave en el desarrollo de la investigación biomédica en Venezuela. Su influencia se extendió más allá de las fronteras venezolanas, y sus aportaciones al conocimiento científico continuaron siendo relevantes en el ámbito internacional.</p>
+                <!-- Reconocimientos y Honores en el Exilio -->
+                <div class="biography-section">
+                    <div class="biography-text">
+                        <h4>Reconocimientos y Honores en el Exilio</h4>
+                        <p>En 1956, Augusto Pi-Suñer recibió el Premio Kalinga otorgado por la UNESCO, un reconocimiento internacional a su labor de divulgación científica. Este galardón, que anteriormente había sido otorgado a figuras como Bertrand Russell y Julian Huxley, reflejaba la importancia de su contribución al conocimiento científico y su impacto en la educación en América Latina y más allá.</p>
+                        <p>El trabajo de Augusto Pi-Suñer en Venezuela no pasó desapercibido. En 1954, fue objeto de un homenaje en México, donde fue reconocido por sus contribuciones a la ciencia y la educación en América Latina. Además, en 1962, el presidente de Venezuela, Rómulo Betancourt, le otorgó la Orden Francisco de Miranda, una de las más altas distinciones del país, en reconocimiento a su labor como científico y educador. Betancourt se refirió a Pi-Suñer como un hombre que no solo había sembrado el conocimiento científico en Venezuela, sino también los valores de la civilidad y la justicia, lo cual reflejaba el profundo respeto que el científico catalán había ganado entre sus colegas y estudiantes venezolanos.</p>
+                        <p>Pi-Suñer también fue miembro de varias sociedades científicas y académicas en Venezuela y fue invitado a participar en numerosos congresos y eventos internacionales. A pesar de estar lejos de su tierra natal, logró mantener una activa vida académica y científica, y se convirtió en una figura clave en el desarrollo de la investigación biomédica en Venezuela. Su influencia se extendió más allá de las fronteras venezolanas, y sus aportaciones al conocimiento científico continuaron siendo relevantes en el ámbito internacional.</p>
+                    </div>
+                    <div class="biography-image">
+                        <img src="images/reconocimientos-augusto-pi-sunyer.jpg" alt="Reconocimientos de Augusto Pi-Suñer">
+                    </div>
+                </div>
 
-                <h4>Últimos Años y Muerte</h4>
-                <p>Los últimos años de la vida de Augusto Pi-Suñer estuvieron marcados por la enfermedad y el desgaste físico, aunque su espíritu científico se mantuvo intacto hasta el final. Continuó participando en actividades académicas y colaborando con sus colegas hasta que su salud se lo permitió. En 1963, debido a complicaciones de salud, decidió trasladarse a México, donde vivían algunos de sus familiares y donde podría recibir mejor atención médica. Allí pasó los últimos años de su vida, rodeado del afecto de su familia y de colegas que lo admiraban profundamente.</p>
-                <p>El 12 de enero de 1965, Augusto Pi-Suñer falleció en Ciudad de México a la edad de 85 años. Su muerte marcó el final de una vida dedicada al conocimiento, a la ciencia y al servicio de la sociedad. Su legado, sin embargo, perdura en las instituciones que ayudó a fundar y en las generaciones de científicos y médicos que formó a lo largo de su carrera. En Cataluña, se le recuerda como uno de los grandes científicos de su época, un pionero que puso los cimientos para el desarrollo de la fisiología moderna en la región. En Venezuela, su nombre es sinónimo de excelencia académica y compromiso con el avance científico.</p>
+                <!-- Últimos Años y Muerte -->
+                <div class="biography-section">
+                    <div class="biography-text">
+                        <h4>Últimos Años y Muerte</h4>
+                        <p>Los últimos años de la vida de Augusto Pi-Suñer estuvieron marcados por la enfermedad y el desgaste físico, aunque su espíritu científico se mantuvo intacto hasta el final. Continuó participando en actividades académicas y colaborando con sus colegas hasta que su salud se lo permitió. En 1963, debido a complicaciones de salud, decidió trasladarse a México, donde vivían algunos de sus familiares y donde podría recibir mejor atención médica. Allí pasó los últimos años de su vida, rodeado del afecto de su familia y de colegas que lo admiraban profundamente.</p>
+                        <p>El 12 de enero de 1965, Augusto Pi-Suñer falleció en Ciudad de México a la edad de 85 años. Su muerte marcó el final de una vida dedicada al conocimiento, a la ciencia y al servicio de la sociedad. Su legado, sin embargo, perdura en las instituciones que ayudó a fundar y en las generaciones de científicos y médicos que formó a lo largo de su carrera. En Cataluña, se le recuerda como uno de los grandes científicos de su época, un pionero que puso los cimientos para el desarrollo de la fisiología moderna en la región. En Venezuela, su nombre es sinónimo de excelencia académica y compromiso con el avance científico.</p>
+                    </div>
+                    <div class="biography-image">
+                        <img src="images/ultimos-anos-augusto-pi-sunyer.jpg" alt="Últimos Años de Augusto Pi-Suñer">
+                    </div>
+                </div>
 
-                <h4>Legado de su Trayectoria en la República</h4>
-                <p>La trayectoria de Augusto Pi-Suñer durante la Segunda República Española fue un ejemplo de compromiso con la ciencia, la educación y la libertad. Su trabajo en la Universidad Autónoma de Barcelona, en el Instituto de Fisiología y en la Sociedad Catalana de Biología dejó un legado duradero en la historia de la ciencia en Cataluña. Pi-Suñer no solo fue un científico destacado, sino también un defensor de los valores republicanos, la autonomía universitaria y la cultura catalana.</p>
-                <p>Su influencia se extendió más allá de las fronteras de España, y su exilio en Venezuela marcó el comienzo de una nueva etapa en su vida, en la cual continuaría luchando por los mismos ideales que había defendido durante la República. Su legado es un recordatorio del poder transformador de la ciencia y la educación, y de la importancia de mantener viva la curiosidad intelectual incluso en tiempos de adversidad.</p>
+                <!-- Legado -->
+                <div class="biography-section">
+                    <div class="biography-text">
+                        <h4>Legado de Augusto Pi-Suñer</h4>
+                        <p>El legado de Augusto Pi-Suñer es vasto y diverso. Fue un hombre que vivió en tiempos turbulentos, pero que nunca perdió su compromiso con la ciencia y la educación. Su capacidad para adaptarse a las adversidades del exilio y continuar su labor científica es un testimonio de su resiliencia y dedicación. Las instituciones que fundó y las generaciones que formó son una prueba de la profundidad de su influencia. En un momento en que la represión y la censura amenazaban con destruir el conocimiento en su tierra natal, Pi-Suñer supo encontrar un nuevo hogar donde seguir cultivando la ciencia y compartiendo su pasión por el conocimiento.</p>
+                        <p>Augusto Pi-Suñer dejó un ejemplo de cómo la ciencia y la cultura pueden servir como pilares de resistencia frente a la adversidad. Su vida es un recordatorio de la importancia de la educación y de la libertad académica, y de cómo el conocimiento puede trascender fronteras y generaciones. Aunque murió en el exilio, su legado sigue vivo tanto en Cataluña como en América Latina, y su nombre continúa siendo un símbolo de excelencia científica y de compromiso social.</p>
+                    </div>
+                    <div class="biography-image">
+                        <img src="images/legado-augusto-pi-sunyer.jpg" alt="Legado de Augusto Pi-Suñer">
+                    </div>
+                </div>
             </section>
         </div>
     </main>
 
     <footer>
-        &copy; 2024 Pàgina de Figura Històrica. Tots els drets reservats.
+        &copy; 2024 Página de Figura Histórica. Todos los derechos reservados.
     </footer>
 
     <script>
