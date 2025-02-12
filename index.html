@@ -41,7 +41,7 @@
       object-fit: cover;
     }
     
-    /* Hero Content (Overlay Title and Description) */
+    /* Hero Content (Overlay Title) */
     .hero-content {
       position: absolute;
       top: 0;
@@ -55,19 +55,15 @@
       text-align: center;
       color: var(--secondary-color);
       text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
-      transition: opacity 0.5s ease;
+      transition: opacity 0.5s ease; /* Smooth fade transition */
       z-index: 1;
+      opacity: 1; /* Initially visible */
     }
     
     .hero-content h1 {
       font-family: 'Montserrat', sans-serif;
       font-size: 3em;
       margin: 0;
-    }
-    
-    .hero-content p {
-      font-size: 1.5em;
-      margin-top: 10px;
     }
     
     main {
@@ -194,7 +190,7 @@
         Your browser does not support the video tag.
       </video>
     </div>
-    <!-- Hero Content (Overlay Title and Description) -->
+    <!-- Hero Content (Overlay Title) -->
     <div class="hero-content">
       <h1>August Pi-Sunyer</h1>
     </div>
@@ -218,16 +214,26 @@
     &copy; 2025 August Pi-Sunyer. Tots els drets reservats.
   </footer>
   
-  <!-- JavaScript to Fade Out the Title on Scroll -->
+  <!-- JavaScript to Automatically Fade and Re-Display the Title Based on Pointer Movement -->
   <script>
-    window.addEventListener("scroll", function() {
-      var heroContent = document.querySelector(".hero-content");
-      // As you scroll from 0 to 50 pixels, the title fades out gradually.
-      if (window.scrollY < 50) {
-        heroContent.style.opacity = 1 - window.scrollY / 50;
-      } else {
-        heroContent.style.opacity = 0;
-      }
+    let fadeTimeout;
+
+    // Function to schedule the fade-out after 3 seconds
+    function scheduleFadeOut() {
+      clearTimeout(fadeTimeout);
+      fadeTimeout = setTimeout(() => {
+        document.querySelector(".hero-content").style.opacity = "0";
+      }, 3000);
+    }
+
+    // On page load, schedule the fade-out of the title after 3 seconds of inactivity.
+    window.addEventListener("load", scheduleFadeOut);
+
+    // When the user moves the pointer, show the title and reschedule the fade-out.
+    document.addEventListener("mousemove", () => {
+      const heroContent = document.querySelector(".hero-content");
+      heroContent.style.opacity = "1";
+      scheduleFadeOut();
     });
   </script>
 </body>
