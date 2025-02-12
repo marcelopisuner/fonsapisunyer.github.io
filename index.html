@@ -18,6 +18,7 @@
       font-family: 'Roboto', sans-serif;
       color: var(--text-color);
       background: var(--primary-color);
+      cursor: default; /* Default cursor shown initially */
     }
     
     /* Hero Section: 150vh to allow later scrolling of the video */
@@ -214,25 +215,26 @@
     &copy; 2025 August Pi-Sunyer. Tots els drets reservats.
   </footer>
   
-  <!-- JavaScript to Automatically Fade and Re-Display the Title Based on Pointer Movement -->
+  <!-- JavaScript to Automatically Fade and Re-Display the Title and Pointer Based on Activity -->
   <script>
     let fadeTimeout;
 
-    // Function to schedule the fade-out after 3 seconds
+    // Function to schedule the fade-out after 3 seconds of inactivity.
     function scheduleFadeOut() {
       clearTimeout(fadeTimeout);
       fadeTimeout = setTimeout(() => {
         document.querySelector(".hero-content").style.opacity = "0";
+        document.body.style.cursor = "none";
       }, 2000);
     }
 
-    // On page load, schedule the fade-out of the title after 3 seconds of inactivity.
+    // On page load, schedule the fade-out.
     window.addEventListener("load", scheduleFadeOut);
 
-    // When the user moves the pointer, show the title and reschedule the fade-out.
+    // When the user moves the pointer, show the title and pointer and reschedule the fade-out.
     document.addEventListener("mousemove", () => {
-      const heroContent = document.querySelector(".hero-content");
-      heroContent.style.opacity = "1";
+      document.querySelector(".hero-content").style.opacity = "1";
+      document.body.style.cursor = "default";
       scheduleFadeOut();
     });
   </script>
