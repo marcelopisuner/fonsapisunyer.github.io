@@ -20,27 +20,51 @@
       display: flex;
       flex-direction: column;
       min-height: 100vh;
-      /* Background image remains clearly visible */
-      background: url('images/10.jpg') no-repeat center center fixed;
-      background-size: cover;
+      background: var(--primary-color);
     }
     
-    header {
-      padding: 60px 20px;
+    /* Hero Section with Video Background */
+    #hero {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+    }
+    
+    #hero video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       text-align: center;
-      background: transparent;
-    }
-    
-    header h1 {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 3em;
-      margin: 0;
       color: var(--secondary-color);
       text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
     }
     
+    .hero-content h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 3em;
+      margin: 0;
+    }
+    
+    .hero-content p {
+      font-size: 1.5em;
+      margin-top: 10px;
+    }
+    
     main {
-      flex: 1;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -132,7 +156,7 @@
     }
     
     @media (max-width: 600px) {
-      header h1 {
+      .hero-content h1 {
         font-size: 2.5em;
       }
       
@@ -155,9 +179,19 @@
   </style>
 </head>
 <body>
-  <header>
-    <h1>August Pi-Sunyer</h1>
-  </header>
+  <!-- Hero Section with Video -->
+  <section id="hero">
+    <video autoplay muted loop playsinline>
+      <source src="images/vid_1.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="hero-content">
+      <h1>August Pi-Sunyer</h1>
+      <p>Bienvenido. Desplázate hacia abajo para más información.</p>
+    </div>
+  </section>
+  
+  <!-- Main Content with Interactive Buttons -->
   <main>
     <div class="interactive-squares">
       <div class="square">
@@ -170,6 +204,7 @@
       </div>
     </div>
   </main>
+  
   <footer>
     &copy; 2025 August Pi-Sunyer. Tots els drets reservats.
   </footer>
