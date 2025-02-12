@@ -1,344 +1,235 @@
 <!DOCTYPE html>
-<html lang="ca">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bibliografia - August Pi-Sunyer</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary-color: #4a90e2;
-            --secondary-color: #2c3e50;
-            --accent-color: #8e44ad; /* Violet accent */
-            --background-color: #ffffff; /* Pure white background */
-            --text-color: #333333; /* Dark grey text for readability */
-            --card-background: #f9f9f9; /* Light grey for content boxes */
-            --card-shadow: rgba(0, 0, 0, 0.1); /* Subtle shadow */
-            --hover-color: #e0e0e0; /* Light hover effect */
-            --menu-bg-color: rgba(42, 42, 42, 0.95); /* Semi-transparent dark background for side menu */
-        }
-
-        body {
-            background-color: var(--background-color);
-            color: var(--text-color);
-            font-family: 'Roboto', sans-serif;
-            margin: 0;
-            padding: 0;
-            overflow-x: hidden; /* Prevent horizontal scroll */
-        }
-
-        /* Header Styling */
-        header {
-            background-color: var(--background-color);
-            color: var(--text-color);
-            padding: 20px 20px;
-            text-align: center;
-            position: relative;
-            z-index: 1001; /* Above the side menu */
-            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        header h1 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 2.5em;
-            margin: 0;
-            color: var(--primary-color); /* Primary color title */
-        }
-
-        /* Hamburger Menu Icon */
-        .hamburger {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            width: 30px;
-            height: 25px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            cursor: pointer;
-            z-index: 1002;
-        }
-
-        .hamburger div {
-            width: 100%;
-            height: 4px;
-            background-color: var(--text-color);
-            border-radius: 2px;
-            transition: all 0.3s ease;
-        }
-
-        /* Side Navigation Menu */
-        .side-menu {
-            position: fixed;
-            top: 0;
-            left: -250px; /* Hidden by default */
-            width: 250px;
-            height: 100%;
-            background-color: var(--menu-bg-color);
-            padding-top: 60px;
-            transition: left 0.3s ease;
-            z-index: 1000;
-        }
-
-        .side-menu.active {
-            left: 0; /* Show the menu */
-        }
-
-        .side-menu a {
-            display: block;
-            padding: 15px 25px;
-            text-decoration: none;
-            color: var(--text-color);
-            font-size: 1.1em;
-            transition: background-color 0.3s, color 0.3s;
-        }
-
-        .side-menu a:hover {
-            background-color: var(--primary-color);
-            color: #ffffff;
-        }
-
-        /* Main Content */
-        main {
-            padding: 100px 20px 40px; /* Added top padding to account for header */
-            display: flex;
-            justify-content: center;
-        }
-
-        .content-box {
-            max-width: 900px; /* Set maximum width for the content box */
-            width: 100%;
-            background-color: var(--card-background);
-            padding: 30px;
-            box-shadow: 0px 4px 8px var(--card-shadow);
-            border-radius: 12px;
-            position: relative;
-            z-index: 1;
-        }
-
-        h1, h2 {
-            color: var(--text-color);
-        }
-
-        h2 {
-            margin-top: 40px;
-            border-bottom: 2px solid var(--primary-color);
-            padding-bottom: 10px;
-        }
-
-        p {
-            line-height: 1.6;
-        }
-
-        .bibliography-section {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-
-        .bibliography-section.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        ul li {
-            background: var(--card-background);
-            margin: 10px 0;
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0px 2px 4px var(--card-shadow);
-            transition: transform 0.3s ease, background 0.3s ease;
-        }
-
-        ul li:hover {
-            transform: translateY(-5px);
-            background: #eaeaea; /* Lighter hover background */
-        }
-
-        a.pdf-link {
-            color: var(--primary-color);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        a.pdf-link:hover {
-            color: #1a73e8; /* Slightly darker on hover */
-            text-decoration: underline;
-        }
-
-        /* Footer Styling */
-        footer {
-            background-color: var(--secondary-color);
-            color: white;
-            padding: 20px;
-            text-align: center;
-            margin-top: 40px;
-            border-top: 1px solid #444;
-            box-shadow: 0px -2px 4px rgba(0, 0, 0, 0.05);
-        }
-
-        footer a {
-            color: var(--primary-color);
-            text-decoration: none;
-            margin: 0 10px;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 2em;
-                padding: 20px;
-            }
-
-            .content-box {
-                padding: 20px;
-            }
-
-            footer {
-                padding: 15px;
-                font-size: 0.9em;
-            }
-
-            .hamburger {
-                top: 15px;
-                left: 15px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bibliografía de Augusto Pi-Suñer</title>
+  <style>
+    /* Base Reset and Variables */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    :root {
+      --bg-color: #ffffff;
+      --text-color: #000000;
+    }
+    body {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+    /* Header: Fixed and Minimal */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 20px 40px;
+      background-color: var(--bg-color);
+      border-bottom: 1px solid #e5e5e5;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+    }
+    header .logo {
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+    nav {
+      display: flex;
+      gap: 20px;
+    }
+    /* Hero Section */
+    .hero {
+      margin-top: 100px;
+      padding: 120px 20px 60px;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 3em;
+      margin-bottom: 10px;
+      letter-spacing: 2px;
+    }
+    .hero p {
+      font-size: 1.2em;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    /* Main Content Layout */
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+    /* Section Styling with Fade-In Animation */
+    .section {
+      margin-bottom: 60px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    .section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .section h2 {
+      margin-bottom: 20px;
+      font-size: 1.8em;
+      border-bottom: 1px solid var(--text-color);
+      padding-bottom: 10px;
+    }
+    .section p {
+      margin-bottom: 20px;
+      text-align: justify;
+    }
+    /* Bibliography List Styling */
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    ul li {
+      padding: 15px 0;
+      border-bottom: 1px solid #e5e5e5;
+    }
+    ul li a {
+      color: var(--text-color);
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+    ul li a:hover {
+      text-decoration: underline;
+    }
+    /* Footer Styling */
+    footer {
+      text-align: center;
+      padding: 20px;
+      border-top: 1px solid #e5e5e5;
+      font-size: 0.9em;
+      margin-top: 40px;
+    }
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+      header {
+        padding: 15px 20px;
+      }
+      .hero h1 {
+        font-size: 2.5em;
+      }
+    }
+  </style>
 </head>
 <body>
-
-    <!-- Header with Hamburger Menu -->
-    <header>
-        <div class="hamburger" id="hamburger">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-        <h1>Bibliografia d'August Pi-Sunyer</h1>
-    </header>
-
-    <!-- Side Navigation Menu -->
-    <nav class="side-menu" id="side-menu">
-        <a href="biography.html">Consulta Biografia</a>
-        <a href="bibliography.html">Consulta Bibliografia</a>
+  <!-- Fixed Header with Navigation -->
+  <header>
+    <div class="logo">Augusto Pi-Suñer</div>
+    <nav>
+      <a href="biography.html">Biografía</a>
+      <a href="bibliography.html">Bibliografía</a>
     </nav>
-
-    <main>
-        <div class="content-box">
-            <section id="bibliography" class="bibliography-section">
-                <h2>Publicacions Disponibles</h2>
-                <p>A continuació es presenta una llista de les obres més destacades d'August Pi-Sunyer. Pots fer clic als enllaços per visualitzar o descarregar els documents en format PDF.</p>
-                <ul>
-                    <li><a class="pdf-link" href="pdf/Pi-Suñer(1901,a).pdf" target="_blank">August Pi-Suñer (1901). La Vida Anaeròbica. Tip. La Acadèmia, Barcelona.</a></li>
-                    <li><a class="pdf-link" href="pdf/Pi-Suñer(1911,a).pdf" target="_blank">August Pi-Suñer, Bellido i Golferichs, Josep Maria (1911). El Ritme nodal per a les sals d'estronci (Nota preventiva). Arxius de l'Institut de Ciències.</a></li>
-                    <li><a class="pdf-link" href="pdf/Pi-Suñer(1913,a).pdf" target="_blank">August Pi-Suñer, Bellido i Golferichs, Josep Maria (1913). Amidacions de la força electromotriu en l'electrocardiograma. Treballs de la Societat de Biologia: I: Any primer. 1913 / publicats sota la direcció d'A. Pi Suñer.</a></li>
-                    <li><a class="pdf-link" href="pdf/Pi-Suñer(1913,c).pdf" target="_blank">August Pi-Suñer (1913). Els Últims avenços de la cronofotografia. Treballs de la Societat de Biologia: I: Any primer. 1913 / publicats sota la direcció d'A. Pi Suñer.</a></li>
-                    <li><a class="pdf-link" href="pdf/Pi-Suñer(1913,e).pdf" target="_blank">August Pi-Suñer, Bellido i Golferichs, Josep Maria (1913). L'Electrocardiograma en el ritme nodal per les sals d'estronci. Treballs de la Societat de Biologia: I: Any primer. 1913 / publicats sota la direcció d'A. Pi Suñer.</a></li>
-                    <li><a class="pdf-link" href="pdf/Pi-Suñer(1913,f).pdf" target="_blank">August Pi-Suñer, JM Bellido (1913). L'ecg en l'estat hivernal de la tortuga. TSB.</a></li>
-                    <li><a class="pdf-link" href="pdf/Pi-Suñer(1913,i).pdf" target="_blank">August Pi-Suñer, Bellido i Golferichs, Josep Maria (1913). Tòxics anabòlics i catabòlics del cor. Treballs de la Societat de Biologia: I: Any primer. 1913 / publicats sota la direcció d'A. Pi Suñer.</a></li>
-                    <li><a class="pdf-link" href="pdf/Pi-Suñer(1915,a).pdf" target="_blank">August Pi-Suñer (1915). El Doble mecanisme de les correlacions interfuncionals. Treballs de la Societat de Biologia: tercer any. 1915 / publicats sota la direcció d'A. Pi Suñer.</a></li>
-                    <li><a class="pdf-link" href="pdf/Pi-Suñer(1916,a).pdf" target="_blank">August Pi-Suñer (1916). Miquel A. Fargas. Arxius de l'Institut de Ciències.</a></li>
-                    <li><a class="pdf-link" href="pdf/Pi-Suñer(1917,a).pdf" target="_blank">August Pi-Suñer, JM Bellido (1917). Demostració gràfica dels efectes renals de la sang urèmica. TSB.</a></li>
-                    <li><a class="pdf-link" href="pdf/Pi-Suñer(1918,d).pdf" target="_blank">August Pi-Suñer (1918). Sobre la sensibilitat química de les terminacions del pneumogàstric pulmonar (1ª Nota). TSB.</a></li>
-                    <li><a class="pdf-link" href="pdf/Pi-Suñer(1918,e).pdf" target="_blank">August Pi-Suñer (1918). Un dispositiu pràctic per a la perfusió dels òrgans. TSB.</a></li>
-                    <li><a class="pdf-link" href="pdf/Pi-Suñer(1919,b).pdf" target="_blank">August Pi-Suñer, JM Bellido (1919). Les Vies dels reflexes glucemiants. Treballs de la Societat de Biologia: any setè. 1919 / publicats sota la direcció d'A. Pi Suñer.</a></li>
-                    <li><a class="pdf-link" href="pdf/Pi-Suñer(1919,c).pdf" target="_blank">August Pi-Suñer (1919). Reflexe hipergluceminat per fam local. Treballs de la Societat de Biologia: any setè. 1919 / publicats sota la direcció d'A. Pi Suñer.</a></li>
-                    <li><a class="pdf-link" href="pdf/Pi-Suñer(1919,d).pdf" target="_blank">August Pi-Suñer, JM Bellido (1919). Un mètode senzill per a la determinació quantitativa del glucogen en els teixits. TSB; AIF.</a></li>
-                    <li><a class="pdf-link" href="pdf/Pi-Suñer(1920,a).pdf" target="_blank">August Pi-Suñer, Bernardo A. Houssey (1920). Altres dotze experiments de lligadura. TSB; AIF.</a></li>
-                    <li><a class="pdf-link" href="pdf/Pi-Suñer(1920,d).pdf" target="_blank">August Pi-Suñer, Rossend Carrasco i Formiguera (1920). Nova simplificació de la tècnica de Pi i Sunyer per a la determinació del glucogen en els teixits. TSB; AIF.</a></li>
-                    <li><a class="pdf-link" href="pdf/Pi-Suñer(1920,e).pdf" target="_blank">August Pi-Suñer, JM Bellido (1920). Noves observacions de descàrregues glucogèniques del fetge per fam local. TSB; AIF.</a></li>
-                    <li><a class="pdf-link" href="pdf/Pi-Suñer(1920,f).pdf" target="_blank">August Pi-Suñer, R. Carrasco (1920). Sobre l'acció del clorur d'estronci en el cor dels mamífers. TSB; AIF.</a></li>
-                    <li><a class="pdf-link" href="pdf/Pi-Suñer(1920,g).pdf" target="_blank">August Pi-Suñer, JM Bellido (1920). Sobre la sístole retrògrada. TSB; AIF.</a></li>
-                    <li><a class="pdf-link" href="pdf/Pi-Suñer(1920,h).pdf" target="_blank">August Pi-Suñer, JM Bellido (1920). Una sèrie negativa d'experiments de lligadura. TSB.</a></li>
-                    <li><a class="pdf-link" href="pdf/Pi-Suñer(1921,a).pdf" target="_blank">August Pi-Suñer, Carrasco i Formiguera, Rossend (1921). Anestèsics i hiperglucèmia. Treballs de la Societat de Biologia: volum novè. 1920-1921 / publicats sota la direcció d'A. Pi Suñer.</a></li>
-                    <li><a class="pdf-link" href="pdf/Pi-Suñer(1921,f).pdf" target="_blank">August Pi-Suñer, Carrasco i Formiguera, Rossend (1921). Vint experiments de lligadura i de control. Treballs de la Societat de Biologia: volum novè. 1920-1921 / publicats sota la direcció d'A. Pi Suñer.</a></li>
-                    <li><a class="pdf-link" href="pdf/Pi-Suñer(1922,a).pdf" target="_blank">August Pi-Suñer (1922). Els Reflexos tròfics glucemiants. Treballs de la Societat de Biologia: volum novè. 1922 / publicats sota la direcció d'A. Pi Suñer.</a></li>
-                    <li><a class="pdf-link" href="pdf/Pi-Suñer(1922,b).pdf" target="_blank">August Pi-Suñer, Bellido i Golferichs, Josep Maria (1922). Nota sobre la tècnica de l'electrovagografia. Treballs de la Societat de Biologia: volum novè. 1922 / publicats sota la direcció d'A. Pi Suñer.</a></li>
-                    <li><a class="pdf-link" href="pdf/Pi-Suñer(1922,c).pdf" target="_blank">August Pi-Suñer, Puche i Álvarez, Josep (1922). Notes sobre el simpàtic sensitiu i la inervació aferent de l'estòmac. Treballs de la Societat de Biologia: volum novè. 1922 / publicats sota la direcció d'A. Pi Suñer.</a></li>
-                    <li><a class="pdf-link" href="pdf/Pi-Suñer(1922,d).pdf" target="_blank">August Pi-Suñer, Bellido i Golferichs, Josep Maria (1922). Resultats de l'aplicació de l'electrovagografia a la demostració de la sensibilitat química del pneumogàstric pulmonar (Nota provisional). Treballs de la Societat de Biologia: volum novè. 1922 / publicats sota la direcció d'A. Pi Suñer.</a></li>
-                    <li><a class="pdf-link" href="pdf/Pi-Suñer(1923,c).pdf" target="_blank">August Pi-Suñer, R. Carrasco (1923). Glucèmia i dilució sanguínia. TSB.</a></li>
-                    <li><a class="pdf-link" href="pdf/Pi-Suñer(1923,e).pdf" target="_blank">August Pi-Suñer, J. Puche (1923). La innervació aferent del budell gros (Nota 3 sobre el Simpàtic Sensitiu). TSB; AIF.</a></li>
-                    <li><a class="pdf-link" href="pdf/Pi-Suñer(1923,f).pdf" target="_blank">August Pi-Suñer, J. Puche (1923). La innervació aferent del budell prim (Nota 2 sobre el Simpàtic Sensitiu). TSB; AIF; AM (resum).</a></li>
-                    <li><a class="pdf-link" href="pdf/Pi-Suñer(1923,g).pdf" target="_blank">August Pi-Suñer (1923). Parlament del Dr. August Pi Suñer: la Societat de Biologia i la ciència catalana. Arxius de l'Institut de Ciències.</a></li>
-                    <li><a class="pdf-link" href="pdf/Pi-Suñer(1924,a).pdf" target="_blank">August Pi-Suñer, JM Bellido (1924). Acció del clorur d'estronci sobre el cor dels gossos nou-nats. TSB; C.R. Soc. Biol., Paris.</a></li>
-                    <li><a class="pdf-link" href="pdf/Pi-Suñer(1927,a).pdf" target="_blank">August Pi-Suñer (1927). Tècnica de circulacions creuades. Treballs de la Societat de Biologia: volum onzè. 1925-1927 / publicats sota la direcció d'A. Pi Suñer.</a></li>
-                    <li><a class="pdf-link" href="pdf/Pi-Suñer(1928,a).pdf" target="_blank">August Pi-Suñer, J. Puche (1928). Asfíxia cel·lular i reaccions diabètiques. TSB.</a></li>
-                    <li><a class="pdf-link" href="pdf/Pi-Suñer(1929,a).pdf" target="_blank">August Pi-Suñer, Puche i Álvarez, Josep (1929). La Hiperglucèmia per hemorràgia i dilució sanguínia. Treballs de la Societat de Biologia: volum dotzè. 1928-1929 / publicats sota la direcció d'A. Pi Suñer.</a></li>
-                    <li><a class="pdf-link" href="pdf/Pi-Suñer(1930,b).pdf" target="_blank">August Pi-Suñer, J. Raventós i Pijoan (1930). Mètode per a l'estudi 'in vitro' del metabolisme dels teixits. TSB.</a></li>
-                    <li><a class="pdf-link" href="pdf/Pi-Suñer(1930,c).pdf" target="_blank">August Pi-Suñer (1930). Noves investigacions sobre la sensibilitat química del pneumogàstric pulmonar. TSB.</a></li>
-                    <li><a class="pdf-link" href="pdf/Pi-Suñer(1930,d).pdf" target="_blank">August Pi-Suñer, César Pi-Sunyer i Bayo (1930). Noves recerques sobre la sensibilitat química respiratòria. TSB.</a></li>
-                    <li><a class="pdf-link" href="pdf/Pi-Suñer(1931,d).pdf" target="_blank">August Pi-Suñer (1931). Sobre els efectes de la dilatació rectal i vesical i la conducció dels corresponents estímuls. TSB.</a></li>
-                    <li><a class="pdf-link" href="pdf/Pi-Suñer(1932,j).pdf" target="_blank">August Pi-Suñer, J. Raventós (1932). Nicotina i asfíxia. TSB.</a></li>
-                    <li><a class="pdf-link" href="pdf/Pi-Suñer(1932,l).pdf" target="_blank">August Pi-Suñer, J. Raventós (1932). Sobre el bloqueig de la conducció nerviosa per la nicotina. TSB.</a></li>
-                    <li><a class="pdf-link" href="pdf/Pi-Suñer(1932,n).pdf" target="_blank">August Pi-Suñer, J. Raventós (1932). Sobre la localització selectiva en la intoxicació nerviosa per la nicotina. TSB.</a></li>
-                    <li><a class="pdf-link" href="pdf/Pi-Suñer(1932,o).pdf" target="_blank">August Pi-Suñer, Farran i Pi, Albert (1932). Sobre la presència del metilgliosal en l'orina. TSB; Bloch. Zeits.</a></li>
-                    <li><a class="pdf-link" href="pdf/Pi-Suñer(1932,q).pdf" target="_blank">August Pi-Suñer (1932). Vint anys de Societat de Biologia. TSB.</a></li>
-                    <li><a class="pdf-link" href="pdf/Pi-Suñer(1933,a).pdf" target="_blank">August Pi-Suñer, J. Raventós (1933). El Simpàtic Sensitiu pelvià. TSB.</a></li>
-                    <li><a class="pdf-link" href="pdf/Pi-Suñer(1933,b).pdf" target="_blank">August Pi-Suñer, Folch i Pi, Albert (1933). La Significació clínica de la metilglioxalúria i de l'origen absent urinari. Treballs de la Societat de Biologia: volum quinzè. 1933 / publicats sota la direcció d'A. Pi Suñer.</a></li>
-                    <li><a class="pdf-link" href="pdf/Pi-Suñer(1934,a).pdf" target="_blank">August Pi-Suñer, J. Raventós, A. V. Hill, O. Mayerhof, Severo Ochoa, César Pi-Sunyer i Bayo (1934). El Simpàtic Sensitiu. Les vies aferents de les vísceres abdominals. TSB.</a></li>
-                    <li><a class="pdf-link" href="pdf/Pi-Suñer(1934,d).pdf" target="_blank">August Pi-Suñer, Farran, Montserrat (1934). Hi ha metilglioxal en algunes orines?. Treballs de la Societat de Biologia.</a></li>
-                    <li><a class="pdf-link" href="pdf/Pi-Suñer(1936,h).pdf" target="_blank">August Pi-Suñer, Jaume Pi i Sunyer (1936). Ramón y Cajal and the Physiology of the Nervous System. Journ. of Nerv. and Ment.Dis.; AM.</a></li>
-                    <li><a class="pdf-link" href="pdf/Pi-Suñer(1940,c).pdf" target="_blank">August Pi-Suñer (1940). Los átomos marcats. Caracas.</a></li>
-                    <li><a class="pdf-link" href="pdf/Pi-Suñer(1947,a).pdf" target="_blank">August Pi-Suñer (1947). Nuestra Medicina. Conferència Sanitària Panamericana, Caracas.</a></li>
-                    <li><a class="pdf-link" href="pdf/Pi-Suñer(1947,c).pdf" target="_blank">August Pi-Suñer (1947). The Regulation of Respiratory movements by peripheral chemoreceptors. Physiol. Rev.</a></li>
-                    <li><a class="pdf-link" href="pdf/Pi-Suñer(1947,d).pdf" target="_blank">August Pi-Suñer (1947). The third dimension in the projection of motion pictures. Amer. Journ. Psych.</a></li>
-                    <li><a class="pdf-link" href="pdf/Pi-Suñer(1955,a).pdf" target="_blank">August Pi-Suñer (1955). Classics of Biology. Isaac Pitman, Londres.</a></li>
-                </ul>
-            </section>
-        </div>
-    </main>
-
+  </header>
+  
+  <!-- Main Content Area -->
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <h1>Bibliografía</h1>
+      <p>A continuación se presenta una lista de las obras más destacadas de Augusto Pi-Suñer. Puedes hacer clic en los enlaces para visualizar o descargar los documentos en formato PDF.</p>
+    </section>
+    
+    <!-- Bibliography Section with All Entries -->
+    <section class="section" id="bibliography">
+      <h2>Publicaciones Disponibles</h2>
+      <ul>
+        <li><a href="pdf/Pi-Suñer(1901,a).pdf" target="_blank">August Pi-Suñer (1901). La Vida Anaeròbica. Tip. La Acadèmia, Barcelona.</a></li>
+        <li><a href="pdf/Pi-Suñer(1911,a).pdf" target="_blank">August Pi-Suñer, Bellido i Golferichs, Josep Maria (1911). El Ritme nodal per a les sals d'estronci (Nota preventiva). Arxius de l'Institut de Ciències.</a></li>
+        <li><a href="pdf/Pi-Suñer(1913,a).pdf" target="_blank">August Pi-Suñer, Bellido i Golferichs, Josep Maria (1913). Amidacions de la força electromotriu en l'electrocardiograma. Treballs de la Societat de Biologia: I: Any primer. 1913 / publicats sota la direcció d'A. Pi Suñer.</a></li>
+        <li><a href="pdf/Pi-Suñer(1913,c).pdf" target="_blank">August Pi-Suñer (1913). Els Últims avenços de la cronofotografia. Treballs de la Societat de Biologia: I: Any primer. 1913 / publicats sota la direcció d'A. Pi Suñer.</a></li>
+        <li><a href="pdf/Pi-Suñer(1913,e).pdf" target="_blank">August Pi-Suñer, Bellido i Golferichs, Josep Maria (1913). L'Electrocardiograma en el ritme nodal per les sals d'estronci. Treballs de la Societat de Biologia: I: Any primer. 1913 / publicats sota la direcció d'A. Pi Suñer.</a></li>
+        <li><a href="pdf/Pi-Suñer(1913,f).pdf" target="_blank">August Pi-Suñer, JM Bellido (1913). L'ecg en l'estat hivernal de la tortuga. TSB.</a></li>
+        <li><a href="pdf/Pi-Suñer(1913,i).pdf" target="_blank">August Pi-Suñer, Bellido i Golferichs, Josep Maria (1913). Tòxics anabòlics i catabòlics del cor. Treballs de la Societat de Biologia: I: Any primer. 1913 / publicats sota la direcció d'A. Pi Suñer.</a></li>
+        <li><a href="pdf/Pi-Suñer(1915,a).pdf" target="_blank">August Pi-Suñer (1915). El Doble mecanisme de les correlacions interfuncionals. Treballs de la Societat de Biologia: tercer any. 1915 / publicats sota la direcció d'A. Pi Suñer.</a></li>
+        <li><a href="pdf/Pi-Suñer(1916,a).pdf" target="_blank">August Pi-Suñer (1916). Miquel A. Fargas. Arxius de l'Institut de Ciències.</a></li>
+        <li><a href="pdf/Pi-Suñer(1917,a).pdf" target="_blank">August Pi-Suñer, JM Bellido (1917). Demostració gràfica dels efectes renals de la sang urèmica. TSB.</a></li>
+        <li><a href="pdf/Pi-Suñer(1918,d).pdf" target="_blank">August Pi-Suñer (1918). Sobre la sensibilitat química de les terminacions del pneumogàstric pulmonar (1ª Nota). TSB.</a></li>
+        <li><a href="pdf/Pi-Suñer(1918,e).pdf" target="_blank">August Pi-Suñer (1918). Un dispositiu pràctic per a la perfusió dels òrgans. TSB.</a></li>
+        <li><a href="pdf/Pi-Suñer(1919,b).pdf" target="_blank">August Pi-Suñer, JM Bellido (1919). Les Vies dels reflexes glucemiants. Treballs de la Societat de Biologia: any setè. 1919 / publicats sota la direcció d'A. Pi Suñer.</a></li>
+        <li><a href="pdf/Pi-Suñer(1919,c).pdf" target="_blank">August Pi-Suñer (1919). Reflexe hipergluceminat per fam local. Treballs de la Societat de Biologia: any setè. 1919 / publicats sota la direcció d'A. Pi Suñer.</a></li>
+        <li><a href="pdf/Pi-Suñer(1919,d).pdf" target="_blank">August Pi-Suñer, JM Bellido (1919). Un mètode senzill per a la determinació quantitativa del glucogen en els teixits. TSB; AIF.</a></li>
+        <li><a href="pdf/Pi-Suñer(1920,a).pdf" target="_blank">August Pi-Suñer, Bernardo A. Houssey (1920). Altres dotze experiments de lligadura. TSB; AIF.</a></li>
+        <li><a href="pdf/Pi-Suñer(1920,d).pdf" target="_blank">August Pi-Suñer, Rossend Carrasco i Formiguera (1920). Nova simplificació de la tècnica de Pi i Sunyer per a la determinació del glucogen en els teixits. TSB; AIF.</a></li>
+        <li><a href="pdf/Pi-Suñer(1920,e).pdf" target="_blank">August Pi-Suñer, JM Bellido (1920). Noves observacions de descàrregues glucogèniques del fetge per fam local. TSB; AIF.</a></li>
+        <li><a href="pdf/Pi-Suñer(1920,f).pdf" target="_blank">August Pi-Suñer, R. Carrasco (1920). Sobre l'acció del clorur d'estronci en el cor dels mamífers. TSB; AIF.</a></li>
+        <li><a href="pdf/Pi-Suñer(1920,g).pdf" target="_blank">August Pi-Suñer, JM Bellido (1920). Sobre la sístole retrògrada. TSB; AIF.</a></li>
+        <li><a href="pdf/Pi-Suñer(1920,h).pdf" target="_blank">August Pi-Suñer, JM Bellido (1920). Una sèrie negativa d'experiments de lligadura. TSB.</a></li>
+        <li><a href="pdf/Pi-Suñer(1921,a).pdf" target="_blank">August Pi-Suñer, Carrasco i Formiguera, Rossend (1921). Anestèsics i hiperglucèmia. Treballs de la Societat de Biologia: volum novè. 1920-1921 / publicats sota la direcció d'A. Pi Suñer.</a></li>
+        <li><a href="pdf/Pi-Suñer(1921,f).pdf" target="_blank">August Pi-Suñer, Carrasco i Formiguera, Rossend (1921). Vint experiments de lligadura i de control. Treballs de la Societat de Biologia: volum novè. 1920-1921 / publicats sota la direcció d'A. Pi Suñer.</a></li>
+        <li><a href="pdf/Pi-Suñer(1922,a).pdf" target="_blank">August Pi-Suñer (1922). Els Reflexos tròfics glucemiants. Treballs de la Societat de Biologia: volum novè. 1922 / publicats sota la direcció d'A. Pi Suñer.</a></li>
+        <li><a href="pdf/Pi-Suñer(1922,b).pdf" target="_blank">August Pi-Suñer, Bellido i Golferichs, Josep Maria (1922). Nota sobre la tècnica de l'electrovagografia. Treballs de la Societat de Biologia: volum novè. 1922 / publicats sota la direcció d'A. Pi Suñer.</a></li>
+        <li><a href="pdf/Pi-Suñer(1922,c).pdf" target="_blank">August Pi-Suñer, Puche i Álvarez, Josep (1922). Notes sobre el simpàtic sensitiu i la inervació aferent de l'estòmac. Treballs de la Societat de Biologia: volum novè. 1922 / publicats sota la direcció d'A. Pi Suñer.</a></li>
+        <li><a href="pdf/Pi-Suñer(1922,d).pdf" target="_blank">August Pi-Suñer, Bellido i Golferichs, Josep Maria (1922). Resultats de l'aplicació de l'electrovagografia a la demostració de la sensibilitat química del pneumogàstric pulmonar (Nota provisional). Treballs de la Societat de Biologia: volum novè. 1922 / publicats sota la direcció d'A. Pi Suñer.</a></li>
+        <li><a href="pdf/Pi-Suñer(1923,c).pdf" target="_blank">August Pi-Suñer, R. Carrasco (1923). Glucèmia i dilució sanguínia. TSB.</a></li>
+        <li><a href="pdf/Pi-Suñer(1923,e).pdf" target="_blank">August Pi-Suñer, J. Puche (1923). La innervació aferent del budell gros (Nota 3 sobre el Simpàtic Sensitiu). TSB; AIF.</a></li>
+        <li><a href="pdf/Pi-Suñer(1923,f).pdf" target="_blank">August Pi-Suñer, J. Puche (1923). La innervació aferent del budell prim (Nota 2 sobre el Simpàtic Sensitiu). TSB; AIF; AM (resum).</a></li>
+        <li><a href="pdf/Pi-Suñer(1923,g).pdf" target="_blank">August Pi-Suñer (1923). Parlament del Dr. August Pi Suñer: la Societat de Biologia i la ciència catalana. Arxius de l'Institut de Ciències.</a></li>
+        <li><a href="pdf/Pi-Suñer(1924,a).pdf" target="_blank">August Pi-Suñer, JM Bellido (1924). Acció del clorur d'estronci sobre el cor dels gossos nou-nats. TSB; C.R. Soc. Biol., Paris.</a></li>
+        <li><a href="pdf/Pi-Suñer(1927,a).pdf" target="_blank">August Pi-Suñer (1927). Tècnica de circulacions creuades. Treballs de la Societat de Biologia: volum onzè. 1925-1927 / publicats sota la direcció d'A. Pi Suñer.</a></li>
+        <li><a href="pdf/Pi-Suñer(1928,a).pdf" target="_blank">August Pi-Suñer, J. Puche (1928). Asfíxia cel·lular i reaccions diabètiques. TSB.</a></li>
+        <li><a href="pdf/Pi-Suñer(1929,a).pdf" target="_blank">August Pi-Suñer, Puche i Álvarez, Josep (1929). La Hiperglucèmia per hemorràgia i dilució sanguínia. Treballs de la Societat de Biologia: volum dotzè. 1928-1929 / publicats sota la direcció d'A. Pi Suñer.</a></li>
+        <li><a href="pdf/Pi-Suñer(1930,b).pdf" target="_blank">August Pi-Suñer, J. Raventós i Pijoan (1930). Mètode per a l'estudi 'in vitro' del metabolisme dels teixits. TSB.</a></li>
+        <li><a href="pdf/Pi-Suñer(1930,c).pdf" target="_blank">August Pi-Suñer (1930). Noves investigacions sobre la sensibilitat química del pneumogàstric pulmonar. TSB.</a></li>
+        <li><a href="pdf/Pi-Suñer(1930,d).pdf" target="_blank">August Pi-Suñer, César Pi-Sunyer i Bayo (1930). Noves recerques sobre la sensibilitat química respiratòria. TSB.</a></li>
+        <li><a href="pdf/Pi-Suñer(1931,d).pdf" target="_blank">August Pi-Suñer (1931). Sobre els efectes de la dilatació rectal i vesical i la conducció dels corresponents estímuls. TSB.</a></li>
+        <li><a href="pdf/Pi-Suñer(1932,j).pdf" target="_blank">August Pi-Suñer, J. Raventós (1932). Nicotina i asfíxia. TSB.</a></li>
+        <li><a href="pdf/Pi-Suñer(1932,l).pdf" target="_blank">August Pi-Suñer, J. Raventós (1932). Sobre el bloqueig de la conducció nerviosa per la nicotina. TSB.</a></li>
+        <li><a href="pdf/Pi-Suñer(1932,n).pdf" target="_blank">August Pi-Suñer, J. Raventós (1932). Sobre la localització selectiva en la intoxicació nerviosa per la nicotina. TSB.</a></li>
+        <li><a href="pdf/Pi-Suñer(1932,o).pdf" target="_blank">August Pi-Suñer, Farran i Pi, Albert (1932). Sobre la presència del metilgliosal en l'orina. TSB; Bloch. Zeits.</a></li>
+        <li><a href="pdf/Pi-Suñer(1932,q).pdf" target="_blank">August Pi-Suñer (1932). Vint anys de Societat de Biologia. TSB.</a></li>
+        <li><a href="pdf/Pi-Suñer(1933,a).pdf" target="_blank">August Pi-Suñer, J. Raventós (1933). El Simpàtic Sensitiu pelvià. TSB.</a></li>
+        <li><a href="pdf/Pi-Suñer(1933,b).pdf" target="_blank">August Pi-Suñer, Folch i Pi, Albert (1933). La Significació clínica de la metilglioxalúria i de l'origen absent urinari. Treballs de la Societat de Biologia: volum quinzè. 1933 / publicats sota la direcció d'A. Pi Suñer.</a></li>
+        <li><a href="pdf/Pi-Suñer(1934,a).pdf" target="_blank">August Pi-Suñer, J. Raventós, A. V. Hill, O. Mayerhof, Severo Ochoa, César Pi-Sunyer i Bayo (1934). El Simpàtic Sensitiu. Les vies aferents de les vísceres abdominals. TSB.</a></li>
+        <li><a href="pdf/Pi-Suñer(1934,d).pdf" target="_blank">August Pi-Suñer, Farran, Montserrat (1934). Hi ha metilglioxal en algunes orines?. Treballs de la Societat de Biologia.</a></li>
+        <li><a href="pdf/Pi-Suñer(1936,h).pdf" target="_blank">August Pi-Suñer, Jaume Pi i Sunyer (1936). Ramón y Cajal and the Physiology of the Nervous System. Journ. of Nerv. and Ment.Dis.; AM.</a></li>
+        <li><a href="pdf/Pi-Suñer(1940,c).pdf" target="_blank">August Pi-Suñer (1940). Los átomos marcats. Caracas.</a></li>
+        <li><a href="pdf/Pi-Suñer(1947,a).pdf" target="_blank">August Pi-Suñer (1947). Nuestra Medicina. Conferència Sanitària Panamericana, Caracas.</a></li>
+        <li><a href="pdf/Pi-Suñer(1947,c).pdf" target="_blank">August Pi-Suñer (1947). The Regulation of Respiratory movements by peripheral chemoreceptors. Physiol. Rev.</a></li>
+        <li><a href="pdf/Pi-Suñer(1947,d).pdf" target="_blank">August Pi-Suñer (1947). The third dimension in the projection of motion pictures. Amer. Journ. Psych.</a></li>
+        <li><a href="pdf/Pi-Suñer(1955,a).pdf" target="_blank">August Pi-Suñer (1955). Classics of Biology. Isaac Pitman, Londres.</a></li>
+      </ul>
+    </section>
+    
+    <!-- Footer -->
     <footer>
-        &copy; 2025 August Pi-Sunyer. Tots els drets reservats.
+      &copy; 2025 Augusto Pi-Suñer. Todos los derechos reservados.
     </footer>
-
-    <script>
-        // Toggle Side Menu
-        const hamburger = document.getElementById('hamburger');
-        const sideMenu = document.getElementById('side-menu');
-
-        hamburger.addEventListener('click', () => {
-            sideMenu.classList.toggle('active');
+  </main>
+  
+  <!-- JavaScript for Smooth Fade-In Animations -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const sections = document.querySelectorAll('.section');
+      const observerOptions = { threshold: 0.1 };
+      
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
         });
-
-        // Close side menu when clicking outside
-        document.addEventListener('click', (event) => {
-            if (!sideMenu.contains(event.target) && !hamburger.contains(event.target)) {
-                sideMenu.classList.remove('active');
-            }
-        });
-
-        // Intersection Observer for Bibliography Sections
-        document.addEventListener('DOMContentLoaded', () => {
-            const sections = document.querySelectorAll('.bibliography-section');
-
-            const observer = new IntersectionObserver(entries => {
-                entries.forEach(entry => {
-                    if(entry.isIntersecting){
-                        entry.target.classList.add('visible');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, {
-                threshold: 0.1
-            });
-
-            sections.forEach(section => {
-                observer.observe(section);
-            });
-        });
-    </script>
-
+      }, observerOptions);
+      
+      sections.forEach(section => {
+        observer.observe(section);
+      });
+    });
+  </script>
 </body>
 </html>
