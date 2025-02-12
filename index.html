@@ -17,33 +17,51 @@
       padding: 0;
       font-family: 'Roboto', sans-serif;
       color: var(--text-color);
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
       background: var(--primary-color);
     }
     
-    /* Hero Section with Video Background */
+    /* Hero Section */
     #hero {
+      position: relative;
+      /* Make this section taller than one viewport to allow the video to scroll away later */
+      height: 150vh;
+    }
+    
+    /* Placeholder to reserve space equal to one viewport height */
+    #video-placeholder {
+      height: 100vh;
+    }
+    
+    /* Video Wrapper – will be fixed initially, then released to scroll */
+    #video-wrapper.fixed {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      z-index: -1;
+    }
+    
+    #video-wrapper.released {
       position: relative;
       width: 100%;
       height: 100vh;
-      overflow: hidden;
+      z-index: -1;
     }
     
-    #hero video {
-      position: absolute;
-      top: 0;
-      left: 0;
+    #video-wrapper video {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
     
+    /* Hero Content (Title and Description) */
     .hero-content {
-      position: relative;
-      z-index: 1;
-      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -51,7 +69,8 @@
       text-align: center;
       color: var(--secondary-color);
       text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
-      transition: opacity 0.5s ease; /* Added transition for smooth fade */
+      transition: opacity 0.5s ease;
+      z-index: 1;
     }
     
     .hero-content h1 {
@@ -180,12 +199,18 @@
   </style>
 </head>
 <body>
-  <!-- Hero Section with Video -->
+  <!-- Hero Section -->
   <section id="hero">
-    <video autoplay muted loop playsinline>
-      <source src="images/vid_2.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
+    <!-- This placeholder reserves the space for the video -->
+    <div id="video-placeholder"></div>
+    <!-- Video Wrapper: starts as fixed, then becomes "released" on scroll -->
+    <div id="video-wrapper" class="fixed">
+      <video autoplay muted loop playsinline>
+        <source src="images/vid_2.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <!-- Hero Content (Title and Description) -->
     <div class="hero-content">
       <h1>August Pi-Sunyer</h1>
       <p>Bienvenido. Desplázate hacia abajo para más información.</p>
@@ -210,15 +235,21 @@
     &copy; 2025 August Pi-Sunyer. Tots els drets reservats.
   </footer>
   
-  <!-- JavaScript to Fade Out Hero Title on Scroll -->
+  <!-- JavaScript to Fade Out the Title and "Release" the Video -->
   <script>
     window.addEventListener("scroll", function() {
       var heroContent = document.querySelector(".hero-content");
-      // Adjust the threshold value as needed for your design
+      var videoWrapper = document.getElementById("video-wrapper");
+      // Fade out the overlay text during the first 50 pixels of scrolling
       if (window.scrollY > 50) {
         heroContent.style.opacity = "0";
+        // Switch the video wrapper from fixed to released so it will scroll
+        videoWrapper.classList.remove("fixed");
+        videoWrapper.classList.add("released");
       } else {
         heroContent.style.opacity = "1";
+        videoWrapper.classList.remove("released");
+        videoWrapper.classList.add("fixed");
       }
     });
   </script>
