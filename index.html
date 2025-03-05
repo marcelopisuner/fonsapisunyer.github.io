@@ -221,22 +221,22 @@
 
     // Function to schedule the fade-out after 3 seconds of inactivity.
     function scheduleFadeOut() {
-      clearTimeout(fadeTimeout);
-      fadeTimeout = setTimeout(() => {
-        document.querySelector(".hero-content").style.opacity = "0";
-        document.body.style.cursor = "none";
-      }, 2000);
-    }
+  clearTimeout(fadeTimeout);
+  fadeTimeout = setTimeout(() => {
+    const heroContent = document.querySelector(".hero-content");
+    heroContent.style.opacity = "0";
+    heroContent.style.pointerEvents = "none"; // Disable interactions
+    document.body.style.cursor = "none";
+  }, 2000);
+}
 
-    // On page load, schedule the fade-out.
-    window.addEventListener("load", scheduleFadeOut);
-
-    // When the user moves the pointer, show the title and pointer and reschedule the fade-out.
-    document.addEventListener("mousemove", () => {
-      document.querySelector(".hero-content").style.opacity = "1";
-      document.body.style.cursor = "default";
-      scheduleFadeOut();
-    });
+document.addEventListener("mousemove", () => {
+  const heroContent = document.querySelector(".hero-content");
+  heroContent.style.opacity = "1";
+  heroContent.style.pointerEvents = "auto"; // Re-enable interactions
+  document.body.style.cursor = "default";
+  scheduleFadeOut();
+});
   </script>
 </body>
 </html>
