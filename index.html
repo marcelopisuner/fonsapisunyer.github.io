@@ -44,22 +44,23 @@
     
     /* Hero Content (Overlay Title) */
     .hero-content {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      color: var(--secondary-color);
-      text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
-      transition: opacity 0.5s ease; /* Smooth fade transition */
-      z-index: 1;
-      opacity: 1; /* Initially visible */
-    }
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: var(--secondary-color);
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+  transition: opacity 0.5s ease;
+  z-index: 1;
+  opacity: 1;
+  pointer-events: none; /* This line disables mouse interactions */
+}
     
     .hero-content h1 {
       font-family: 'Montserrat', sans-serif;
