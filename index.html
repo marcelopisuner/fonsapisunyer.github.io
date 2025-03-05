@@ -18,7 +18,7 @@
       font-family: 'Roboto', sans-serif;
       color: var(--text-color);
       background: var(--primary-color);
-      cursor: default; /* Default cursor shown initially */
+      cursor: default;
     }
     
     /* Hero Section: 150vh to allow later scrolling of the video */
@@ -42,32 +42,7 @@
       object-fit: cover;
     }
     
-    /* Hero Content (Overlay Title) */
-    .hero-content {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: var(--secondary-color);
-  text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
-  transition: opacity 0.5s ease;
-  z-index: 1;
-  opacity: 1;
-  pointer-events: none; /* This line disables mouse interactions */
-}
-    
-    .hero-content h1 {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 3em;
-      margin: 0;
-    }
-    
+    /* Main Content Styling */
     main {
       display: flex;
       justify-content: center;
@@ -160,10 +135,6 @@
     }
     
     @media (max-width: 600px) {
-      .hero-content h1 {
-        font-size: 2.5em;
-      }
-      
       .interactive-squares {
         flex-direction: column;
         gap: 30px;
@@ -212,28 +183,6 @@
     &copy; 2025 August Pi-Sunyer. Tots els drets reservats.
   </footer>
   
-  <!-- JavaScript to Automatically Fade and Re-Display the Title and Pointer Based on Activity -->
-  <script>
-    let fadeTimeout;
-
-    // Function to schedule the fade-out after 3 seconds of inactivity.
-    function scheduleFadeOut() {
-  clearTimeout(fadeTimeout);
-  fadeTimeout = setTimeout(() => {
-    const heroContent = document.querySelector(".hero-content");
-    heroContent.style.opacity = "0";
-    heroContent.style.pointerEvents = "none"; // Disable interactions
-    document.body.style.cursor = "none";
-  }, 2000);
-}
-
-document.addEventListener("mousemove", () => {
-  const heroContent = document.querySelector(".hero-content");
-  heroContent.style.opacity = "1";
-  heroContent.style.pointerEvents = "auto"; // Re-enable interactions
-  document.body.style.cursor = "default";
-  scheduleFadeOut();
-});
-  </script>
+  <!-- Removed JavaScript for fading title and pointer event handling -->
 </body>
 </html>
