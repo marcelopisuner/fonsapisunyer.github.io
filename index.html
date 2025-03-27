@@ -244,9 +244,18 @@
         }
       }
 
-      // Hide arrow when the video is clicked
+      // Toggle play and pause on video click, while still hiding the arrow
       if (video) {
-        video.addEventListener('click', hideArrow);
+        video.addEventListener('click', function() {
+          hideArrow();
+          if (video.paused) {
+            video.play();
+            customControls.style.display = 'none';
+          } else {
+            video.pause();
+            customControls.style.display = 'block';
+          }
+        });
       }
 
       // Hide arrow when the user scrolls down
