@@ -206,6 +206,29 @@
     &copy; 2025 August Pi-Sunyer. Tots els drets reservats.
   </footer>
   
-  <!-- Removed JavaScript for fading title and pointer event handling -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var scrollArrow = document.querySelector('.scroll-arrow');
+      var video = document.querySelector('#video-wrapper video');
+
+      function hideArrow() {
+        if (scrollArrow) {
+          scrollArrow.style.display = 'none';
+        }
+      }
+
+      // Hide arrow when the video is clicked
+      if (video) {
+        video.addEventListener('click', hideArrow);
+      }
+
+      // Hide arrow when the user scrolls down
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 0) {
+          hideArrow();
+        }
+      });
+    });
+  </script>
 </body>
 </html>
