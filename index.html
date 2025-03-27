@@ -43,6 +43,27 @@
       pointer-events: auto;
     }
 
+    /* Custom Video Controls */
+    #custom-controls {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+    }
+    #custom-controls button {
+      background: rgba(0, 0, 0, 0.7);
+      border: none;
+      color: #fff;
+      padding: 10px 20px;
+      font-size: 1.2em;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    #custom-controls button:hover {
+      background: rgba(0, 0, 0, 0.9);
+    }
+
     /* Main Content Styling - Modern Card Layout */
     main {
       display: flex;
@@ -177,10 +198,13 @@
   <section id="hero">
     <!-- Video Wrapper (sticky so it stays fixed until the hero section scrolls away) -->
     <div id="video-wrapper">
-      <video loop playsinline controls poster="images/back_wide.png">
+      <video loop playsinline poster="images/back_wide.png">
         <source src="images/vid_2.mp4" type="video/mp4">
         El teu navegador no admet l'etiqueta de vídeo.
       </video>
+      <div id="custom-controls">
+        <button id="play-button">Play</button>
+      </div>
       <div class="scroll-arrow">
         <div class="arrow">&#x2193;</div>
         <div class="arrow-text">Desplaça't cap avall per veure la biografia i la bibliografia</div>
@@ -210,6 +234,9 @@
     document.addEventListener('DOMContentLoaded', function() {
       var scrollArrow = document.querySelector('.scroll-arrow');
       var video = document.querySelector('#video-wrapper video');
+      var customControls = document.getElementById('custom-controls');
+      var playButton = document.getElementById('play-button');
+      var hidePointerTimeout;
 
       function hideArrow() {
         if (scrollArrow) {
@@ -228,6 +255,36 @@
           hideArrow();
         }
       });
+
+      if (playButton && video) {
+        playButton.addEventListener('click', function() {
+          video.play();
+          customControls.style.display = 'none';
+        });
+      }
+
+      video.addEventListener('playing', function() {
+        resetHidePointerTimer();
+      });
+
+      video.addEventListener('pause', function() {
+        video.style.cursor = 'default';
+        clearTimeout(hidePointerTimeout);
+      });
+
+      video.addEventListener('mousemove', function() {
+        video.style.cursor = 'default';
+        resetHidePointerTimer();
+      });
+
+      function resetHidePointerTimer() {
+        clearTimeout(hidePointerTimeout);
+        hidePointerTimeout = setTimeout(function() {
+          if (!video.paused) {
+            video.style.cursor = 'none';
+          }
+        }, 3000);
+      }
     });
   </script>
 </body>
